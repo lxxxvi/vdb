@@ -9,6 +9,7 @@ gem 'puma'
 gem 'sass-rails'
 gem 'webpacker'
 gem 'haml-rails'
+gem 'discogs-wrapper'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

@@ -1,0 +1,12 @@
+%h1 Search
+
+= form_with(url: '/search', method: 'get', local: true) do
+  = text_field_tag :query, params[:query]
+  = submit_tag 'Search'
+
+- if @result.any?
+  %h2= "Result for #{params[:query]}"
+  %div#result
+    %ul
+      - @result.each do |item|
+        %li= item.title
