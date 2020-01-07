@@ -8,6 +8,9 @@
     = javascript_pack_tag 'application'
   %body
     %div
-      = render 'search/form'
+      %nav.pl-4
+        = link_to 'Releases', releases_path, class: 'nav-link'
+        .float-right
+          = render 'search/form'
     %div
       = yield

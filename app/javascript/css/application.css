@@ -2,4 +2,36 @@
 
 @tailwind components;
 
+h1 {
+  @apply text-yellow-800 tracking-wide;
+}
+
+nav {
+  @apply bg-blue-900;
+}
+
+a {
+  @apply text-blue-500;
+}
+
+a:hover {
+  @apply underline;
+}
+
+.weak-link {
+  @apply text-blue-400;
+}
+
+.nav-link {
+  @apply text-gray-100 text-lg py-3 inline-block tracking-wide;
+}
+
+.nav-link:hover {
+  @apply text-yellow-400;
+}
+
+input[type="text"] {
+  @apply p-1;
+}
+
 @tailwind utilities;
