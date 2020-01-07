@@ -7,6 +7,8 @@
     = csp_meta_tag
     = javascript_pack_tag 'application'
   %body
+    - if offline_mode?
+      .bg-yellow-500.text-gray-900.text-xs.text-center offline mode
     %div
       %nav.pl-4
         = link_to 'Releases', releases_path, class: 'nav-link'

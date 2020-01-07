@@ -28,6 +28,7 @@ module Vdb
     config.discogs_wrapper = Discogs::Wrapper.new('VDB', user_token: config.discogs_token)
 
     config.action_view.form_with_generates_remote_forms = false
+    config.settings = config_for(:settings)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
