@@ -6,7 +6,7 @@ class SearchController < ApplicationController
   private
 
   def search_discogs(query)
-    return [] if query.empty?
+    return [] if query.nil?
 
     Rails.configuration
          .discogs_wrapper
