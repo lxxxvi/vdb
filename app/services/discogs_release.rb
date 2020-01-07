@@ -1,4 +1,6 @@
 class DiscogsRelease
+  attr_reader :model
+
   def initialize(model)
     @model = model
   end
@@ -27,63 +29,64 @@ class DiscogsRelease
   end
 
   def catalog_number
-    @model.labels.first.catno
+    model.labels.first.catno
   end
 
   def label
-    @model.labels.first.name
+    model.labels.first.name
   end
 
   def artist
-    Array(@model.artists).reduce('') do |acc, item|
+    Array(model.artists).reduce('') do |acc, item|
       "#{acc}#{item[:name]}#{item[:join]}"
     end
   end
 
   def name
-    @model.title
+    model.title
   end
 
   def year
-    @model.year
+    model.year
   end
 
   def genre
-    @model.genres.join(', ')
+    model.genres.join(', ')
   end
 
   def format_quantity
-    @model.format_quantity
+    model.format_quantity
   end
 
   def discogs_id
-    @model.id
+    model.id
   end
 
   def discogs_community_have
-    @model.community[:have]
+    model.community[:have]
   end
 
   def discogs_community_want
-    @model.community[:want]
+    model.community[:want]
   end
 
   def discogs_lowest_price
-    @model.lowest_price
+    model.lowest_price
   end
 
   def discogs_number_for_sale
-    @model.num_for_sale
+    model.num_for_sale
   end
 
   def discogs_cover_thumb_url
+    model.images.first.uri150
   end
 
   def discogs_api_resource_url
-    @model.resource_url
+    model.resource_url
   end
 
   def discogs_uri
-    @model.uri
+    model.uri
   end
 end
