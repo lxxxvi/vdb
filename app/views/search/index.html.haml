@@ -20,7 +20,6 @@
         %th Label
         %th Title
         %th Year
-
     %tbody
       - @result.each do |item|
         %tr
@@ -36,3 +35,4 @@
           %td= item.label.join(', ')
           %td= item.title
           %td= item.year
+
