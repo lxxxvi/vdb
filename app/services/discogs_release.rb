@@ -1,0 +1,89 @@
+class DiscogsRelease
+  def initialize(model)
+    @model = model
+  end
+
+  def self.find(discogs_id)
+    new(Rails.configuration.discogs_wrapper.get_release(discogs_id))
+  end
+
+  def to_release
+    Release.find_or_initialize_by(discogs_id: discogs_id).tap do |release|
+      release.catalog_number = catalog_number
+      release.label = label
+      release.artist = artist
+      release.name = name
+      release.year = year
+      release.genre = genre
+      release.format_quantity = format_quantity
+      release.discogs_community_have = discogs_community_have
+      release.discogs_community_want = discogs_community_want
+      release.discogs_lowest_price = discogs_lowest_price
+      release.discogs_number_for_sale = discogs_number_for_sale
+      release.discogs_cover_thumb_url = discogs_cover_thumb_url
+      release.discogs_api_resource_url = discogs_api_resource_url
+      release.discogs_uri = discogs_uri
+    end
+  end
+
+  def catalog_number
+    @model.labels.first.catno
+  end
+
+  def label
+    @model.labels.first.name
+  end
+
+  def artist
+    Array(@model.artists).reduce('') do |acc, item|
+      "#{acc}#{item[:name]}#{item[:join]}"
+    end
+  end
+
+  def name
+    @model.title
+  end
+
+  def year
+    @model.year
+  end
+
+  def genre
+    @model.genres.join(', ')
+  end
+
+  def format_quantity
+    @model.format_quantity
+  end
+
+  def discogs_id
+    @model.id
+  end
+
+  def discogs_community_have
+    @model.community[:have]
+  end
+
+  def discogs_community_want
+    @model.community[:want]
+  end
+
+  def discogs_lowest_price
+    @model.lowest_price
+  end
+
+  def discogs_number_for_sale
+    @model.num_for_sale
+  end
+
+  def discogs_cover_thumb_url
+  end
+
+  def discogs_api_resource_url
+    @model.resource_url
+  end
+
+  def discogs_uri
+    @model.uri
+  end
+end

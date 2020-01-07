@@ -1,0 +1,41 @@
+%h1 Releases
+
+%table
+  %thead
+    %tr
+      %th Catalog Number
+      %th Label
+      %th Artist
+      %th Name
+      %th Year
+      %th Genre
+      %th Format Quantity
+      %th Discogs ID
+      %th Discogs Community Have
+      %th Discogs Community Want
+      %th Discogs Lowest Price
+      %th Discogs Number For Sale
+      %th Discogs Cover Thumb URL
+      %th Discogs API Resource URL
+      %th Discogs URI
+  %tbody
+    - @releases.each do |release|
+      %tr
+        %td= release.catalog_number
+        %td= release.label
+        %td= release.artist
+        %td= release.name
+        %td= release.year
+        %td= release.genre
+        %td= release.format_quantity
+        %td= release.discogs_id
+        %td= release.discogs_community_have
+        %td= release.discogs_community_want
+        %td= release.discogs_lowest_price
+        %td= release.discogs_number_for_sale
+        %td= release.discogs_cover_thumb_url
+        %td= release.discogs_api_resource_url
+        %td= release.discogs_uri
+
+
+
