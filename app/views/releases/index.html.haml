@@ -1,15 +1,15 @@
-.mx-4
-  %h1.my-4 Releases
+.mx-4.mt-8
+  %h1 Releases
 
-- @releases.each do |release|
-  .border-t.border-b.border-gray-200.bg-yellow-100
-    .flex
+.mx-4
+  - @releases.each do |release|
+    .flex.my-8.shadow-xl.border
       %div{ style: 'width: 150px;' }
         - if release.discogs_cover_thumb_url.present?
           = image_tag release.discogs_cover_thumb_url
-      .w-full
+      .w-full.py-2
         .flex
-          .p-2{ class: 'w-5/6' }
+          .pl-2{ class: 'w-5/6' }
             .flex
               .w-full.text-xs.text-gray-500
                 = release.label
@@ -34,7 +34,7 @@
             .flex
               .w-full
                 %span
-          .p-2.text-right.text-xs{ class: 'w-1/6' }
+          .pr-2.text-right.text-xs{ class: 'w-1/6' }
             .flex
               .w-full
                 = link_to 'Discogs', release.discogs_uri

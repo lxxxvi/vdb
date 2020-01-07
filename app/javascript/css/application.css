@@ -3,7 +3,7 @@
 @tailwind components;
 
 h1 {
-  @apply text-yellow-800 tracking-wide;
+  @apply text-blue-800 tracking-wide;
 }
 
 nav {
@@ -32,6 +32,14 @@ a:hover {
 
 input[type="text"] {
   @apply p-1;
+}
+
+.green-button {
+  @apply px-8 text-sm text-green-100 bg-green-500 py-1 tracking-wider;
+}
+
+.green-button:hover {
+  @apply bg-green-600 cursor-pointer;
 }
 
 @tailwind utilities;
