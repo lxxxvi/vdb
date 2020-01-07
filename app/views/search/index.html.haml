@@ -1,7 +1,7 @@
 %h1 Search
 
 = form_with(url: '/search', method: 'get', local: true) do
-  = text_field_tag :query, params[:query]
+  = text_field_tag :search_catno, params[:search_catno]
   = submit_tag 'Search'
 
 - if @result.any?
@@ -20,6 +20,7 @@
         %th Label
         %th Title
         %th Year
+
     %tbody
       - @result.each do |item|
         %tr
@@ -27,11 +28,11 @@
           %td= item.catno
           %td= "#{item.community['have']}/#{item.community['want']}"
           %td= item.country
-          %td= item.thumb
+          %td
+            = image_tag item.thumb, height: '100', alt: "Cover for #{item.title}"
           %td= item.genre.join(', ')
           %td= item.id
           %td= item.resource_url
           %td= item.label.join(', ')
           %td= item.title
           %td= item.year
-

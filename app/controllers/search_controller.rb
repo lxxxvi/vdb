@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @result = search_discogs(params[:query])
+    @result = search_discogs(params[:search_catno])
   end
 
   private
