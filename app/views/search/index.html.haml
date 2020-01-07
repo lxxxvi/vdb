@@ -1,12 +1,38 @@
 %h1 Search
 
 = form_with(url: '/search', method: 'get', local: true) do
-  = text_field_tag :query, params[:query]
+  = text_field_tag :search_catno, params[:search_catno]
   = submit_tag 'Search'
 
 - if @result.any?
   %h2= "Result for #{params[:query]}"
-  %div#result
-    %ul
+  %table
+    %thead
+      %tr
+        %th Barcode
+        %th Catno
+        %th Have/Want
+        %th Country
+        %th Image
+        %th Genre
+        %th ID
+        %th Resource URL
+        %th Label
+        %th Title
+        %th Year
+
+    %tbody
       - @result.each do |item|
-        %li= item.title
+        %tr
+          %td= item.barcode.join(', ')
+          %td= item.catno
+          %td= "#{item.community['have']}/#{item.community['want']}"
+          %td= item.country
+          %td
+            = image_tag item.thumb, height: '100', alt: "Cover for #{item.title}"
+          %td= item.genre.join(', ')
+          %td= item.id
+          %td= item.resource_url
+          %td= item.label.join(', ')
+          %td= item.title
+          %td= item.year

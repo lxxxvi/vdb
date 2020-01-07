@@ -1,12 +1,12 @@
 class SearchController < ApplicationController
   def index
-    @result = search_discogs(params[:query])
+    @result = search_discogs(params[:search_catno])
   end
 
   private
 
   def search_discogs(query)
-    return [] if query.empty?
+    return [] if query.nil?
 
     Rails.configuration
          .discogs_wrapper
