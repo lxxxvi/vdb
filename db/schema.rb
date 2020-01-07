@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_01_07_090732) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "releases", force: :cascade do |t|
     t.string "catalog_number"
     t.string "label"
