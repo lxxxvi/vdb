@@ -9,10 +9,12 @@
   %body
     - if offline_mode?
       .bg-yellow-500.text-gray-900.text-xs.text-center offline mode
-    %div
-      %nav.pl-4
-        = link_to 'Releases', releases_path, class: 'nav-link'
-        .float-right
+    .flex.bg-blue-900
+      %div{ class: 'w-2/3' }
+        %nav.pl-4.inline
+          = link_to 'Releases', releases_path, class: 'nav-link'
+      %div.text-right{ class: 'w-1/3' }
+        .h-full.flex.flex-col.justify-center.mr-4
           = render 'search/form'
     %div
       = yield

@@ -6,9 +6,6 @@ h1 {
   @apply text-blue-800 tracking-wide;
 }
 
-nav {
-  @apply bg-blue-900;
-}
 
 a {
   @apply text-blue-500;
@@ -27,11 +24,11 @@ a:hover {
 }
 
 .nav-link:hover {
-  @apply text-yellow-400;
+  @apply text-yellow-400 no-underline;
 }
 
 input[type="text"] {
-  @apply p-1;
+  @apply py-1 px-2;
 }
 
 .green-button {
@@ -40,6 +37,10 @@ input[type="text"] {
 
 .green-button:hover {
   @apply bg-green-600 cursor-pointer;
+}
+
+.search-form--submit {
+  @apply h-full bg-blue-500 px-3 text-blue-100 text-sm;
 }
 
 @tailwind utilities;
