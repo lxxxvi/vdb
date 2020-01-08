@@ -1,11 +1,16 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+release_virgen_india:
+  catalog_number: "S 65085"
+  label: "CBS"
+  artist: "Jorge CafruneYMarito (2)"
+  name: "Virgen India"
+  year: '1973'
+  genre: "Folk, World, & Country"
+  format_quantity: 1
+  discogs_id: 4346534
+  discogs_community_have: 33
+  discogs_community_want: 6
+  discogs_lowest_price: 2.1
+  discogs_number_for_sale: 38
+  discogs_cover_thumb_url: "/images/cover_thumb_discogs_id_4346534.jpg"
+  discogs_api_resource_url: "https://api.discogs.com/releases/4346534"
+  discogs_uri: "https://www.discogs.com/Jorge-Cafrune-Y-Marito-Virgen-India/release/4346534"
