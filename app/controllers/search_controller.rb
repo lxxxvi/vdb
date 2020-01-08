@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  FAKE_RESULT_PATH = Rails.root.join('test/fixtures/files/discogs_search_result_hashie.marshal').freeze
+  FAKE_RESULT_PATH = Rails.root.join('test/fixtures/files/marshals/discogs_search_result_hashie.marshal').freeze
 
   def index
     @result = search_discogs(params[:search_catno])
