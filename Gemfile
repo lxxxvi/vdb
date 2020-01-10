@@ -3,14 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
-gem 'rails'
+gem 'bootsnap'
+gem 'discogs-wrapper'
+gem 'haml-rails'
 gem 'pg'
 gem 'puma'
+gem 'rails'
+gem 'webmock'
 gem 'webpacker'
-gem 'haml-rails'
-gem 'discogs-wrapper'
-
-gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
