@@ -1,5 +1,5 @@
 module ApplicationHelper
   def offline_mode?
-    Rails.configuration.settings.offline_mode && !Rails.env.production?
+    Rails.configuration.offline_mode
   end
 end

@@ -5,7 +5,3 @@ development:
 test:
   offline_mode: true
   discogs_token: 'NO-DISCOGS-TOKEN'
-
-production:
-  offline_mode: false
-  discogs_token: <%= ENV['DISCOGS_TOKEN'] || 'set env variable `export DISCOGS_TOKEN=`' %>

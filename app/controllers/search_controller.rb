@@ -11,10 +11,7 @@ class SearchController < ApplicationController
     return [] if query.nil?
     return fake_result if helpers.offline_mode?
 
-    Rails.configuration
-         .discogs_wrapper
-         .search(nil, per_page: 10, type: :release, catno: query)
-         .results
+    DISCOGS_WRAPPER.search(nil, per_page: 10, type: :release, catno: query).results
   end
 
 

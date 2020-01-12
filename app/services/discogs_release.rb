@@ -6,7 +6,7 @@ class DiscogsRelease
   end
 
   def self.find(discogs_id)
-    new(Rails.configuration.discogs_wrapper.get_release(discogs_id))
+    new(DISCOGS_WRAPPER.get_release(discogs_id))
   end
 
   def to_release

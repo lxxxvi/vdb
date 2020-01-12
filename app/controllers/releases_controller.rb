@@ -24,6 +24,6 @@ class ReleasesController < ApplicationController
   end
 
   def find_release_on_discogs(discogs_id)
-    Rails.configuration.discogs_wrapper.get_release(discogs_id)
+    DISCOGS_WRAPPER.get_release(discogs_id)
   end
 end
