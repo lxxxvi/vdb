@@ -23,7 +23,12 @@ module Vdb
   class Application < Rails::Application
     config.load_defaults 6.0
     config.action_view.form_with_generates_remote_forms = false
-    config.settings = config_for(:settings)
-    config.discogs_wrapper = Discogs::Wrapper.new('VDB', user_token: config.settings.discogs_token)
+
+    if Rails.root.join('config/settings.yml').exist?
+      config.settings = config_for(:settings)
+      config.discogs_wrapper = Discogs::Wrapper.new('VDB', user_token: config.settings.discogs_token)
+    else
+      puts "*** ERROR: 'config/settings.yml' could not be found"
+    end
   end
 end
