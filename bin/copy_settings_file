@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+force = (ARGV[0] == 'force')
+
+def copy_settings_file
+  puts "Copy settings.yml"
+  FileUtils.cp 'config/settings.yml.sample', 'config/settings.yml'
+end
+
+copy_settings_file if !File.exist?('config/settings.yml') || force
