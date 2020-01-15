@@ -10,7 +10,7 @@ module Stubs
   end
 
   def discogs_releases_endpoint_url(discogs_id)
-    "https://api.discogs.com/releases/#{discogs_id}?f=json&token=NO-DISCOGS-TOKEN"
+    "https://api.discogs.com/releases/#{discogs_id}?f=json&token=#{Rails.configuration.discogs_token}"
   end
 
   def discogs_headers

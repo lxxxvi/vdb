@@ -37,4 +37,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.offline_mode = true
+  config.discogs_token = 'NO-DISCOGS-TOKEN'
 end
