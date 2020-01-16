@@ -1,4 +1,8 @@
+require 'stubs/discogs'
+
 module Stubs
+  include Stubs::Discogs
+
   def discogs_release_stub(discogs_id)
     stub_request(:get, discogs_releases_endpoint_url(discogs_id))
       .with(headers: discogs_headers)
@@ -23,5 +27,9 @@ module Stubs
 
   def discogs_release_response_body(discogs_id)
     file_fixture("json/discogs_release_#{discogs_id}.json")
+  end
+
+  def discogs_search_stub(catalog_number)
+    Stubs::Discogs::Search.new(catalog_number).stub
   end
 end
