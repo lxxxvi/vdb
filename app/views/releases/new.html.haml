@@ -6,7 +6,14 @@
     .flex.mb-8
       .pr-1{ class: 'w-1/6' }
         = f.label :label
-        = f.text_field :label, class: 'w-full shadow', placeholder: 'Ninja Tune'
+        = f.text_field :label,
+                       class: 'w-full shadow',
+                       placeholder: 'Ninja Tune',
+                       list: 'labels-list'
+
+        %datalist#labels-list
+          = options_for_select Release.distinct(:label).order(:label).pluck(:label)
+
       .pr-1{ class: 'w-1/12' }
         = f.label :catalog_number, 'Catalog #'
         = f.text_field :catalog_number, class: 'w-full shadow', placeholder: 'ABC 123'
@@ -16,9 +23,13 @@
         = f.label :artist, 'Artist (*)'
         = f.text_field :artist,
                        class: "w-full shadow #{@release.errors.key?(:artist) ? 'has-error' : nil}",
-                       placeholder: 'Bonobo'
+                       placeholder: 'Bonobo',
+                       list: 'artists-list'
         - @release.errors.full_messages_for(:artist).each do |message|
           .text-xs.text-red-400= message
+
+        %datalist#artists-list
+          = options_for_select Release.distinct(:artist).order(:artist).pluck(:artist)
 
       .pr-1{ class: 'w-1/6' }
         = f.label :name, 'Release name (*)'
@@ -34,7 +45,9 @@
         = f.text_field :year, class: 'w-full shadow', placeholder: '2010'
       .pr-1{ class: 'w-1/6' }
         = f.label :genre
-        = f.text_field :genre, class: 'w-full shadow', placeholder: 'Electronic'
+        = f.text_field :genre,
+                       class: 'w-full shadow',
+                       placeholder: 'Electronic'
       .pr-1{ class: 'w-1/12' }
         = f.label :format_quantity
         = f.number_field :format_quantity, min: 1, step: 1, class: 'w-full shadow', placeholder: '2'
