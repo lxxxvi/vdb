@@ -11,9 +11,6 @@ a {
   @apply text-blue-500;
 }
 
-a:hover {
-  @apply underline;
-}
 
 .weak-link {
   @apply text-blue-400;
@@ -27,8 +24,12 @@ a:hover {
   @apply text-yellow-400 no-underline;
 }
 
-input[type="text"] {
-  @apply py-1 px-2;
+label {
+  @apply block text-xs text-gray-700;
+}
+
+input[type="text"], input[type="number"] {
+  @apply py-1 px-2 border border-gray-400;
 }
 
 .green-button {
@@ -41,6 +42,18 @@ input[type="text"] {
 
 .search-form--submit {
   @apply h-full bg-blue-500 px-3 text-blue-100 text-sm;
+}
+
+.flash-alert {
+  @apply bg-yellow-200;
+}
+
+.flash-notice {
+  @apply bg-blue-200;
+}
+
+.flash-success {
+  @apply bg-green-200;
 }
 
 @tailwind utilities;

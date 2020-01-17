@@ -1,4 +1,5 @@
 .mx-4.mt-8
+  = link_to 'Add release', new_release_path, class: 'green-button float-right'
   %h1 Releases
 
 .mx-4
@@ -35,18 +36,23 @@
               .w-full
                 %span
           .pr-2.text-right.text-xs{ class: 'w-1/6' }
-            .flex
-              .w-full
-                = link_to 'Discogs', release.discogs_uri
-                = raw "(#{link_to 'API', release.discogs_api_resource_url, class: 'weak-link' })"
-            .flex.mt-2
-              .w-full
-                .block.text-gray-500 Have / Want / Sale
-                = "#{release.discogs_community_have} / #{release.discogs_community_want} / #{release.discogs_number_for_sale}"
-            .flex.mt-2
-              .w-full
-                .block.text-gray-500 Lowest price
-                = "$ #{release.discogs_lowest_price}"
+            - if release.discogs_id.nil?
+              .flex
+                .w-full
+                  .text-gray-500 No Discogs data
+            - else
+              .flex
+                .w-full
+                  = link_to 'Discogs', release.discogs_uri
+                  = raw "(#{link_to 'API', release.discogs_api_resource_url, class: 'weak-link' })"
+              .flex.mt-2
+                .w-full
+                  .block.text-gray-500 Have / Want / Sale
+                  = "#{release.discogs_community_have} / #{release.discogs_community_want} / #{release.discogs_number_for_sale}"
+              .flex.mt-2
+                .w-full
+                  .block.text-gray-500 Lowest price
+                  = "$ #{release.discogs_lowest_price}"
 
 
 
