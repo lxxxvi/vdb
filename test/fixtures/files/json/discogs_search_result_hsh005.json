@@ -1,0 +1,108 @@
+{
+  "pagination": {
+    "per_page": 10,
+    "items": 2,
+    "page": 1,
+    "urls": {},
+    "pages": 1
+  },
+  "results": [
+    {
+      "user_data": {
+        "in_collection": false,
+        "in_wantlist": false
+      },
+      "community": {
+        "have": 0,
+        "want": 0
+      },
+      "catno": "HSH005",
+      "year": "2019",
+      "format_quantity": 0,
+      "id": 13565620,
+      "style": [
+        "Tech House"
+      ],
+      "thumb": "https://img.discogs.com/jDjQtWfbxeWPJQ1tDyH0BKuFJYY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13565620-1556625168-6123.jpeg.jpg",
+      "title": "Arthus (2) - Catuaba EP",
+      "label": [
+        "Hossh Records",
+        "Syncrophone"
+      ],
+      "master_id": 0,
+      "type": "release",
+      "format": [
+        "File",
+        "WAV",
+        "EP"
+      ],
+      "barcode": [],
+      "master_url": null,
+      "genre": [
+        "Electronic"
+      ],
+      "country": "UK",
+      "uri": "/Arthus-Catuaba-EP/release/13565620",
+      "formats": [
+        {
+          "descriptions": [
+            "WAV",
+            "EP"
+          ],
+          "name": "File",
+          "qty": "4"
+        }
+      ],
+      "cover_image": "https://img.discogs.com/i6oPBs7_f5jxam1F28bY9Wluess=/fit-in/500x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13565620-1556625168-6123.jpeg.jpg",
+      "resource_url": "https://api.discogs.com/releases/13565620"
+    },
+    {
+      "user_data": {
+        "in_collection": false,
+        "in_wantlist": false
+      },
+      "community": {
+        "have": 3,
+        "want": 1
+      },
+      "catno": "HSH005",
+      "year": "2015",
+      "format_quantity": 1,
+      "id": 6990537,
+      "style": [
+        "Downtempo",
+        "Instrumental"
+      ],
+      "thumb": "https://img.discogs.com/NEGIsXjvzSZIABYGgVnOExfejQI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6990537-1431161198-8342.jpeg.jpg",
+      "title": "Home Street Home - 87trees",
+      "label": [
+        "Home Street Home Records"
+      ],
+      "master_id": 0,
+      "type": "release",
+      "format": [
+        "CD",
+        "Compilation"
+      ],
+      "barcode": [],
+      "master_url": null,
+      "genre": [
+        "Electronic",
+        "Hip Hop"
+      ],
+      "country": "Switzerland",
+      "uri": "/Home-Street-Home-87trees/release/6990537",
+      "formats": [
+        {
+          "descriptions": [
+            "Compilation"
+          ],
+          "name": "CD",
+          "qty": "1"
+        }
+      ],
+      "cover_image": "https://img.discogs.com/9dqA_N6wTurtkNa2YWVibAY4yEc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6990537-1431161198-8342.jpeg.jpg",
+      "resource_url": "https://api.discogs.com/releases/6990537"
+    }
+  ]
+}
