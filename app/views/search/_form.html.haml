@@ -1,3 +1,8 @@
 = form_with(url: '/search', method: 'get', class: 'search-form') do
-  = text_field_tag :search_catno, params[:search_catno], placeholder: 'Catalog number', class: 'search-form--text-field', autofocus: true
-  = submit_tag 'Search Discogs', class: 'search-form--submit'
+  = text_field_tag :search_catno,
+                   params[:search_catno],
+                   placeholder: 'Catalog #',
+                   autofocus: true,
+                   class: 'w-24 text-sm py-1'
+  = submit_tag 'Search',
+               class: 'py-1 bg-blue-500 px-3 text-blue-100 text-sm'

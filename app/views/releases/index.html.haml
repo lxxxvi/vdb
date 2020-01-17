@@ -1,61 +1,50 @@
-.mx-4.mt-8
-  = link_to 'Add release', new_release_path, class: 'green-button float-right'
-  %h1 Releases
 
-.mx-4
-  - @releases.each do |release|
-    .flex.my-8.shadow-xl.border
-      %div{ style: 'width: 150px;' }
-        - if release.discogs_cover_thumb_url.present?
-          = image_tag release.discogs_cover_thumb_url
-      .w-full.py-2
-        .flex
-          .pl-2{ class: 'w-5/6' }
-            .flex
-              .w-full.text-xs.text-gray-500
-                = release.label
-                = "(#{release.catalog_number})"
+.flex.my-8
+  .ml-auto.mr-auto{ class: 'w-2/3' }
+    = link_to 'Add release', new_release_path, class: 'green-button float-right'
+    %h1 Releases
 
-            .flex
-              .w-full.text-blue-800.text-sm
-                %span= release.artist
-            .flex.my-2
-              .w-full.text-xl
-                %span= release.name
+- @releases.each do |release|
+  .flex.border-b.py-8
+    %div{ class: 'w-2/3 ml-auto mr-auto' }
+      .flex
+        %div{ style: 'width: 150px; ' }
+          - if release.discogs_cover_thumb_url.present?
+            = image_tag release.discogs_cover_thumb_url
+          - else
+            .no-image
+        .w-full
+          .flex.ml-8
+            .w-full
+              .flex.mb-1
+                .w-full.text-blue-800.text-sm
+                  %span= release.artist
 
-            .flex
-              .w-full.text-xs
-                - if release.year.to_i > 0
-                  %span.text-gray-500= release.year
+              .flex
+                .w-full.text-3xl
+                  %span= release.name
+              .flex
+                .w-full.text-xs
+                  %span.text-gray-500= release.label
                   \/
-                %span.text-gray-500= release.genre
-                \/
-                %span.text-gray-500= release.format_quantity
+                  %span.text-gray-500= "(#{release.catalog_number})"
+                  \/
+                  - if release.year.to_i > 0
+                    %span.text-gray-500= release.year
+                    \/
+                  %span.text-gray-500= release.genre
+                  \/
+                  %span.text-gray-500= release.format_quantity
 
-            .flex
-              .w-full
-                %span
-          .pr-2.text-right.text-xs{ class: 'w-1/6' }
-            - if release.discogs_id.nil?
               .flex
                 .w-full
-                  .text-gray-500 No Discogs data
-            - else
-              .flex
-                .w-full
-                  = link_to 'Discogs', release.discogs_uri
-                  = raw "(#{link_to 'API', release.discogs_api_resource_url, class: 'weak-link' })"
-              .flex.mt-2
-                .w-full
-                  .block.text-gray-500 Have / Want / Sale
-                  = "#{release.discogs_community_have} / #{release.discogs_community_want} / #{release.discogs_number_for_sale}"
-              .flex.mt-2
-                .w-full
-                  .block.text-gray-500 Lowest price
-                  = "$ #{release.discogs_lowest_price}"
+                  - if release.discogs_id.nil?
+                    .text-gray-500 No Discogs data
 
-
-
-
-
-
+                  -else
+                    = link_to 'Discogs', release.discogs_uri
+                    = raw "(#{link_to 'API', release.discogs_api_resource_url, class: 'weak-link' })"
+                    %div Have / Want / Sale
+                    = "#{release.discogs_community_have} / #{release.discogs_community_want} / #{release.discogs_number_for_sale}"
+                    %div Lowest price
+                    = "$ #{release.discogs_lowest_price}"

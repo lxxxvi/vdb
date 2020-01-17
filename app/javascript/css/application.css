@@ -6,11 +6,9 @@ h1 {
   @apply text-blue-800 tracking-wide;
 }
 
-
 a {
   @apply text-blue-500;
 }
-
 
 .weak-link {
   @apply text-blue-400;
@@ -29,7 +27,7 @@ label {
 }
 
 input[type="text"], input[type="number"] {
-  @apply py-1 px-2 border border-gray-400;
+  @apply py-1 px-2;
 }
 
 .green-button {
@@ -38,10 +36,6 @@ input[type="text"], input[type="number"] {
 
 .green-button:hover {
   @apply bg-green-600 cursor-pointer;
-}
-
-.search-form--submit {
-  @apply h-full bg-blue-500 px-3 text-blue-100 text-sm;
 }
 
 .flash-alert {
@@ -54,6 +48,10 @@ input[type="text"], input[type="number"] {
 
 .flash-success {
   @apply bg-green-200;
+}
+
+.no-image {
+  @apply block bg-gray-100 h-full border border-gray-200;
 }
 
 @tailwind utilities;
