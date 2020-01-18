@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   get 'search', to: 'search#index', as: :search
-  resources :releases, only: %i[index create]
+  resources :releases, only: %i[index new create]
   root to: 'releases#index'
 end
