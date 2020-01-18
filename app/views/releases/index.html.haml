@@ -14,37 +14,37 @@
           - else
             .no-image
         .w-full
-          .flex.ml-8
-            .w-full
-              .flex.mb-1
-                .w-full.text-blue-800.text-sm
-                  %span= release.artist
+          .flex
+            .px-8{ class: 'w-full' }
+              .flex.mb-2
+                .w-full.text-blue-800.text-sm= release.artist
+
+              .flex.mb-2
+                .w-full.text-3xl= release.name
 
               .flex
-                .w-full.text-3xl
-                  %span= release.name
-              .flex
-                .w-full.text-xs
-                  %span.text-gray-500= release.label
-                  \/
-                  %span.text-gray-500= "(#{release.catalog_number})"
-                  \/
-                  - if release.year.to_i > 0
-                    %span.text-gray-500= release.year
-                    \/
-                  %span.text-gray-500= release.genre
-                  \/
-                  %span.text-gray-500= release.format_quantity
+                .w-full.text-xs= release.decorate.display_facts
 
+            .px-8.border-l.border-r{ class: 'w-1/3' }
               .flex
+                .w-full.text-gray-300 TBD
+
+            .pl-8{ class: 'w-1/6' }
+              .flex.h-full
                 .w-full
                   - if release.discogs_id.nil?
-                    .text-gray-500 No Discogs data
-
+                    .text-gray-500.text-right.text-xs No Discogs data
                   -else
-                    = link_to 'Discogs', release.discogs_uri
-                    = raw "(#{link_to 'API', release.discogs_api_resource_url, class: 'weak-link' })"
-                    %div Have / Want / Sale
-                    = "#{release.discogs_community_have} / #{release.discogs_community_want} / #{release.discogs_number_for_sale}"
-                    %div Lowest price
-                    = "$ #{release.discogs_lowest_price}"
+                    .flex.text-right.flex-wrap
+                      .w-full.mb-2
+                        = link_to 'Discogs', release.discogs_uri
+                        = raw "(#{link_to 'API', release.discogs_api_resource_url, class: 'weak-link' })"
+                      .w-full.mb-2
+                        .text-xs.text-gray-500 Have / Want / Sale
+                        = "#{release.discogs_community_have} / #{release.discogs_community_want} / #{release.discogs_number_for_sale}"
+                      .w-full
+                        .text-xs.text-gray-500 Lowest price
+                        - if release.discogs_lowest_price.to_f > 0
+                          .text-lg.font-bold.tracking-wide= "$ #{release.discogs_lowest_price}"
+                        - else
+                          .text-gray-800 n/a

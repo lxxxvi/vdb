@@ -9,6 +9,10 @@ class Release < ApplicationRecord
 
   scope :ordered, -> { order(created_at: :desc) }
 
+  def decorate
+    @decorate ||= ReleaseDecorator.new(self)
+  end
+
   private
 
   def initialize_format_quantity
