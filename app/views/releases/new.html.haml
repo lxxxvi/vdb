@@ -8,11 +8,7 @@
         = f.label :label
         = f.text_field :label,
                        class: 'w-full shadow',
-                       placeholder: 'Ninja Tune',
-                       list: 'labels-list'
-
-        %datalist#labels-list
-          = options_for_select Release.distinct(:label).order(:label).pluck(:label)
+                       placeholder: 'Ninja Tune'
 
       .pr-1{ class: 'w-1/12' }
         = f.label :catalog_number, 'Catalog #'
@@ -23,13 +19,9 @@
         = f.label :artist, 'Artist (*)'
         = f.text_field :artist,
                        class: "w-full shadow #{@release.errors.key?(:artist) ? 'has-error' : nil}",
-                       placeholder: 'Bonobo',
-                       list: 'artists-list'
+                       placeholder: 'Bonobo'
         - @release.errors.full_messages_for(:artist).each do |message|
           .text-xs.text-red-400= message
-
-        %datalist#artists-list
-          = options_for_select Release.distinct(:artist).order(:artist).pluck(:artist)
 
       .pr-1{ class: 'w-1/6' }
         = f.label :name, 'Release name (*)'
