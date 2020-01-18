@@ -4,6 +4,10 @@
     = link_to 'Add release', new_release_path, class: 'green-button float-right'
     %h1 Releases
 
+.flex.my-8
+  .ml-auto.mr-auto{ class: 'w-2/3' }
+    = raw pagy_nav(@pagy)
+
 - @releases.each do |release|
   .flex.border-b.py-8
     %div{ class: 'w-2/3 ml-auto mr-auto' }
