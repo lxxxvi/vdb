@@ -14,13 +14,18 @@
         .flex
           %div{ class: 'w-1/2' }
             %nav.inline
-              = link_to 'Releases', releases_path, class: 'nav-link'
+              - if user_signed_in?
+                = link_to 'Releases', releases_path, class: 'nav-link'
+              - else
+                = link_to 'Sign in', new_user_session_path, class: 'nav-link'
           %div.text-right{ class: 'w-1/2' }
-            .h-full.flex.flex-col.justify-center
-              = render 'search/form'
+            - if user_signed_in?
+              .h-full.flex.flex-col.justify-center
+                = render 'search/form'
     .flash-banner
       - flash.each do |key, text|
-        .px-4.py-2.text-gray-700.flash{ class: "flash-#{key}" }= text
-
+        .py-3.text-gray-700.flash{ class: "flash-#{key}" }
+          .flex
+            .ml-auto.mr-auto{ class: 'w-2/3' }= text
     %div
       = yield

@@ -1,0 +1,29 @@
+.flex.my-8
+  .ml-auto.mr-auto{ class: 'w-1/6' }
+    %h1.text-2xl Sign in
+
+.flex
+  .ml-auto.mr-auto{ class: 'w-1/6' }
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .flex.bg-gray-100.border.border-gray-300
+        .w-full.m-4
+          .flex.mb-4
+            .w-full
+              = f.label :email
+              = f.email_field :email,
+                              autofocus: true,
+                              autocomplete: 'email',
+                              class: 'w-full'
+          .flex.mb-4
+            .w-full
+              = f.label :password
+              = f.password_field :password,
+                                 autocomplete: 'current-password',
+                                 class: 'w-full'
+          .flex.my-6
+            .w-full
+              = f.submit 'Sign in',
+                         class: 'green-button w-full'
+          .flex.mt-6
+            .w-full
+              = render 'devise/shared/links'
