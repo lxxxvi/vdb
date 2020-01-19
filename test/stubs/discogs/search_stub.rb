@@ -1,11 +1,12 @@
 module Discogs
   class SearchStub < BaseStub
-    def initialize(catalog_number)
+    def initialize(catalog_number, user)
       @catalog_number = catalog_number
+      @user = user
     end
 
     def url
-      "https://api.discogs.com/database/search?catno=#{@catalog_number}&f=json&per_page=10&q&token=#{Rails.configuration.discogs_token}&type=release"
+      "https://api.discogs.com/database/search?catno=#{@catalog_number}&f=json&per_page=10&q&token=NO-DISCOGS-TOKEN&type=release"
     end
 
     def response_fixture_file_path

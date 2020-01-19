@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_19_111823) do
+ActiveRecord::Schema.define(version: 2020_01_07_090732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "releases", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "catalog_number"
     t.string "label"
     t.string "artist", null: false
@@ -23,6 +24,9 @@ ActiveRecord::Schema.define(version: 2020_01_19_111823) do
     t.string "year"
     t.string "genre"
     t.integer "format_quantity"
+    t.integer "own_quantity"
+    t.text "notes"
+    t.date "given_up_on"
     t.integer "discogs_id"
     t.integer "discogs_community_have"
     t.integer "discogs_community_want"
@@ -35,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_111823) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist", "name"], name: "index_releases_on_artist_and_name", unique: true
     t.index ["discogs_id"], name: "index_releases_on_discogs_id", unique: true
+    t.index ["user_id"], name: "index_releases_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,8 +50,10 @@ ActiveRecord::Schema.define(version: 2020_01_19_111823) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "discogs_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "releases", "users"
 end

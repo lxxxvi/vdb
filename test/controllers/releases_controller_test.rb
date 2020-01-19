@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class ReleasesControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = users(:pete)
+    sign_in @user
+  end
+
   test 'should get index' do
     get releases_path
     assert_response :success
@@ -8,7 +13,7 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
 
   test 'creates a new release' do
     discogs_id = 6990537 # see ./test/fixtures/files/json/discogs_release_6990537.json
-    discogs_release_stub(discogs_id)
+    discogs_release_stub(discogs_id, @user)
 
     assert_difference -> { Release.count } do
       post releases_path, params: { release: { discogs_id: discogs_id } }
@@ -21,7 +26,7 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
 
   test 'updates an existing release' do
     release = releases(:release_virgen_india)
-    discogs_release_stub(release.discogs_id)
+    discogs_release_stub(release.discogs_id, @user)
 
     release.update(label: nil)
     assert_no_difference -> { Release.count } do

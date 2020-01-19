@@ -1,16 +1,17 @@
 class DiscogsRelease
-  attr_reader :model
+  attr_reader :model, :user
 
-  def initialize(model)
+  def initialize(model, user)
     @model = model
+    @user = user
   end
 
-  def self.find(discogs_id)
-    new(DISCOGS_WRAPPER.get_release(discogs_id))
+  def self.find(discogs_id, user)
+    new(DiscogsApi.for(user).get_release(discogs_id), user)
   end
 
   def to_release
-    Release.find_or_initialize_by(discogs_id: discogs_id).tap do |release|
+    user.releases.find_or_initialize_by(discogs_id: discogs_id).tap do |release|
       release.catalog_number = catalog_number
       release.label = label
       release.artist = artist

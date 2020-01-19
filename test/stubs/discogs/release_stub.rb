@@ -1,11 +1,12 @@
 module Discogs
   class ReleaseStub < BaseStub
-    def initialize(discogs_id)
+    def initialize(discogs_id, user)
       @discogs_id = discogs_id
+      @user = user
     end
 
     def url
-      "https://api.discogs.com/releases/#{@discogs_id}?f=json&token=#{Rails.configuration.discogs_token}"
+      "https://api.discogs.com/releases/#{@discogs_id}?f=json&token=NO-DISCOGS-TOKEN"
     end
 
     def response_fixture_file_path

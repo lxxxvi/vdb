@@ -11,6 +11,7 @@ WebMock.disable_net_connect!({
 
 class ActiveSupport::TestCase
   include StubsHelper
+  include Devise::Test::IntegrationHelpers
 
   parallelize(workers: :number_of_processors)
   fixtures :all

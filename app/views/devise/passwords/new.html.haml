@@ -1,9 +1,9 @@
 .flex.my-8
-  .ml-auto.mr-auto{ class: 'w-1/6' }
+  .ml-auto.mr-auto{ class: 'w-1/5' }
     %h1.text-2xl Forgot your password?
 
 .flex
-  .ml-auto.mr-auto{ class: 'w-1/6' }
+  .ml-auto.mr-auto{ class: 'w-1/5' }
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
       .flex.bg-gray-100.border.border-gray-300
         .w-full.m-4
@@ -13,13 +13,13 @@
               = f.email_field :email,
                               autofocus: true,
                               autocomplete: 'email',
+                              placeholder: 'pete@rock.com',
                               class: "w-full #{resource.errors.key?(:email) ? 'has-error' : nil}"
               - resource.errors.full_messages_for(:email).each do |message|
                 .text-xs.text-red-400= message
           .flex.my-6
             .w-full
-              = f.submit 'Reset my password',
-                         class: 'green-button w-full'
+              = f.submit 'Reset my password', class: 'green-button w-full'
           .flex.mt-6
             .w-full
               = render 'devise/shared/links'

@@ -2,7 +2,7 @@
   %h1 Add release
 
 .mx-4.my-8
-  = form_with(model: @release) do |f|
+  = form_with(model: @release, class: 'release-form') do |f|
     .flex.mb-8
       .pr-1{ class: 'w-1/6' }
         = f.label :label

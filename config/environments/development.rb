@@ -57,7 +57,6 @@ Rails.application.configure do
   if Rails.root.join('config/settings.yml').exist?
     config_for(:settings).tap do |settings|
       config.offline_mode = settings.offline_mode
-      config.discogs_token = settings.discogs_token
     end
   end
 end
