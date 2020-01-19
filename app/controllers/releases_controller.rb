@@ -1,6 +1,6 @@
 class ReleasesController < ApplicationController
   def index
-    @releases = Release.ordered
+    @pagy, @releases = pagy(Release.ordered)
   end
 
   def new
