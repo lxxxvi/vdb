@@ -1,48 +1,15 @@
-.flex.my-8
-  .ml-auto.mr-auto{ class: 'w-2/3' }
-    %h1 Search result
+- if current_user.discogs_token.blank?
+  .flex.py-4.bg-pink-100.text-pink-900
+    .ml-auto.mr-auto{ class: 'w-2/3' }
+      You need to
+      = link_to 'configure your Discogs token', profile_path
+      before you can use the search functionality.
 
-.flex.mt-8
-  .ml-auto.mr-auto{ class: 'w-2/3' }
-    - @result.each do |item|
-      .flex.my-16.shadow-xl.border
-        .w-full
-          .flex
-            %div{ style: 'width: 150px;' }
-              -if item.thumb.present?
-                = image_tag item.thumb, height: '100', alt: "Cover for #{item.title}"
-            .w-full.py-2
-              .flex
-                .pl-4{ class: 'w-5/6' }
-                  .flex
-                    .w-full.text-xs
-                      = item.label.join(', ')
-                      = "(#{item.catno})"
-                  .flex.my-4
-                    .w-full.text-blue-700.text-lg
-                      = item.title
-                  .flex
-                    .w-full.text-xs.text-gray
-                      = item.year
-                      \/
-                      = item.country
-                      \/
-                      = item.genre.join(', ')
-
-                .text-right.text-xs.pr-2{ class: 'w-1/6' }
-                  .flex
-                    .w-full
-                      .text-gray-500.inline Discogs ID
-                      = item.id
-                  .flex
-                    .w-full
-                      = raw "(#{link_to 'API', item.resource_url, class: 'weak-link'})"
-                  .flex
-                    .w-full
-                      .text-gray-500.inline Have / Want
-                      = "#{item.community['have']} / #{item.community['want']}"
-              .flex
-                .w-full.text-right.pr-2
-                  = form_with(model: Release.new(discogs_id: item.id)) do |f|
-                    = f.hidden_field :discogs_id
-                    = f.submit 'Add to library', class: 'green-button'
+- elsif @search.invalid_token?
+  .flex.py-4.bg-pink-100.text-pink-900
+    .ml-auto.mr-auto{ class: 'w-2/3' }
+      There seems to be a problem with your Discogs token. Please head over to
+      = link_to 'your profile page', profile_path
+      and check your configured token.
+- else
+  = render 'search_results', search: @search

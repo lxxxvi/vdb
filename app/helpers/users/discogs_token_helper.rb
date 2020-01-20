@@ -1,0 +1,2 @@
+module Users::DiscogsTokenHelper
+end
