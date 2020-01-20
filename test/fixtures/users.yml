@@ -1,0 +1,11 @@
+DEFAULTS: &DEFAULTS
+  discogs_token: 'NO-DISCOGS-TOKEN'
+  encrypted_password: "$2a$11$5xm5HkfdjkDX0Lif6f1S8u/lbl2/OGovUyUEB3TvqQ5oF3d/pybEe" # 'abc'
+
+pete:
+  <<: *DEFAULTS
+  email: pete@rock.dev
+
+primo:
+  <<: *DEFAULTS
+  email: dj@primo.dev

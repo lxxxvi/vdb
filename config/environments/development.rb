@@ -37,6 +37,8 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
@@ -55,7 +57,6 @@ Rails.application.configure do
   if Rails.root.join('config/settings.yml').exist?
     config_for(:settings).tap do |settings|
       config.offline_mode = settings.offline_mode
-      config.discogs_token = settings.discogs_token
     end
   end
 end

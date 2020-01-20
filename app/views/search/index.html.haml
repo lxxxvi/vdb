@@ -1,46 +1,48 @@
-.mx-4.mt-8
-  %h1 Search result
+.flex.my-8
+  .ml-auto.mr-auto{ class: 'w-2/3' }
+    %h1 Search result
 
-.mx-4
-  - @result.each do |item|
-    .flex.my-8.shadow-xl.border
-      .w-full
-        .flex
-          %div{ style: 'width: 150px;' }
-            -if item.thumb.present?
-              = image_tag item.thumb, height: '100', alt: "Cover for #{item.title}"
-          .w-full.py-2
-            .flex
-              .pl-2{ class: 'w-5/6' }
-                .flex
-                  .w-full.text-xs
-                    = item.label.join(', ')
-                    = "(#{item.catno})"
-                .flex.my-4
-                  .w-full.text-blue-700.text-lg
-                    = item.title
-                .flex
-                  .w-full.text-xs.text-gray
-                    = item.year
-                    \/
-                    = item.country
-                    \/
-                    = item.genre.join(', ')
+.flex.mt-8
+  .ml-auto.mr-auto{ class: 'w-2/3' }
+    - @result.each do |item|
+      .flex.my-16.shadow-xl.border
+        .w-full
+          .flex
+            %div{ style: 'width: 150px;' }
+              -if item.thumb.present?
+                = image_tag item.thumb, height: '100', alt: "Cover for #{item.title}"
+            .w-full.py-2
+              .flex
+                .pl-4{ class: 'w-5/6' }
+                  .flex
+                    .w-full.text-xs
+                      = item.label.join(', ')
+                      = "(#{item.catno})"
+                  .flex.my-4
+                    .w-full.text-blue-700.text-lg
+                      = item.title
+                  .flex
+                    .w-full.text-xs.text-gray
+                      = item.year
+                      \/
+                      = item.country
+                      \/
+                      = item.genre.join(', ')
 
-              .text-right.text-xs.pr-2{ class: 'w-1/6' }
-                .flex
-                  .w-full
-                    .text-gray-500.inline Discogs ID
-                    = item.id
-                .flex
-                  .w-full
-                    = raw "(#{link_to 'API', item.resource_url, class: 'weak-link'})"
-                .flex
-                  .w-full
-                    .text-gray-500.inline Have / Want
-                    = "#{item.community['have']} / #{item.community['want']}"
-            .flex
-              .w-full.text-right.pr-2
-                = form_with(model: Release.new(discogs_id: item.id)) do |f|
-                  = f.hidden_field :discogs_id
-                  = f.submit 'Add to library', class: 'green-button'
+                .text-right.text-xs.pr-2{ class: 'w-1/6' }
+                  .flex
+                    .w-full
+                      .text-gray-500.inline Discogs ID
+                      = item.id
+                  .flex
+                    .w-full
+                      = raw "(#{link_to 'API', item.resource_url, class: 'weak-link'})"
+                  .flex
+                    .w-full
+                      .text-gray-500.inline Have / Want
+                      = "#{item.community['have']} / #{item.community['want']}"
+              .flex
+                .w-full.text-right.pr-2
+                  = form_with(model: Release.new(discogs_id: item.id)) do |f|
+                    = f.hidden_field :discogs_id
+                    = f.submit 'Add to library', class: 'green-button'

@@ -2,6 +2,17 @@
 
 @tailwind components;
 
+html {
+  @apply h-full;
+}
+
+body {
+  @apply min-h-full;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+
 h1 {
   @apply text-blue-800 tracking-wide;
 }
@@ -26,7 +37,10 @@ label {
   @apply block text-xs text-gray-700;
 }
 
-input[type="text"], input[type="number"] {
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
   @apply py-1 px-2;
 }
 
@@ -52,6 +66,15 @@ input[type="text"], input[type="number"] {
 
 .no-image {
   @apply block bg-gray-100 h-full border border-gray-200;
+}
+
+.footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+input.has-error {
+  @apply border border-red-300;
 }
 
 @tailwind utilities;

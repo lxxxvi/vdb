@@ -7,7 +7,7 @@ require "active_job/railtie"
 require "active_record/railtie"
 # require "active_storage/engine"
 require "action_controller/railtie"
-# require "action_mailer/railtie"
+require "action_mailer/railtie"
 # require "action_mailbox/engine"
 # require "action_text/engine"
 require "action_view/railtie"
@@ -25,6 +25,5 @@ module Vdb
     config.action_view.form_with_generates_remote_forms = false
 
     config.offline_mode = false
-    config.discogs_token = ENV['DISCOGS_TOKEN'] || 'set env variable `export DISCOGS_TOKEN=` or define it in config/settings.yml'
   end
 end

@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 gem 'bootsnap'
+gem 'devise'
 gem 'discogs-wrapper'
 gem 'haml-rails'
 gem 'pagy'

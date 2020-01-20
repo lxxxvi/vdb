@@ -8,6 +8,8 @@ class SearchController < ApplicationController
   def search_discogs(query)
     return [] if query.nil?
 
-    DISCOGS_WRAPPER.search(nil, per_page: 10, type: :release, catno: query).results
+    DiscogsApi.for(current_user)
+              .search(nil, per_page: 10, type: :release, catno: query)
+              .results
   end
 end

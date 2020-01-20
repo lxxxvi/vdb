@@ -1,4 +1,6 @@
 class Release < ApplicationRecord
+  belongs_to :user
+
   validates :artist, :name, presence: true
   validates :format_quantity, :discogs_id, :discogs_community_have,
             :discogs_community_want, :discogs_number_for_sale,
@@ -7,6 +9,7 @@ class Release < ApplicationRecord
 
   after_initialize :initialize_format_quantity
 
+  scope :of_user, ->(user) { where(user: user) }
   scope :ordered, -> { order(created_at: :desc) }
 
   def decorate
