@@ -18,6 +18,7 @@ class DiscogsRelease
       release.name = name
       release.year = year
       release.genre = genre
+      release.format = format
       release.format_quantity = format_quantity
       release.discogs_community_have = discogs_community_have
       release.discogs_community_want = discogs_community_want
@@ -53,6 +54,10 @@ class DiscogsRelease
 
   def genre
     model.genres.join(', ')
+  end
+
+  def format
+    model.formats&.first&.name
   end
 
   def format_quantity

@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2020_01_07_090732) do
     t.string "name", null: false
     t.string "year"
     t.string "genre"
+    t.string "format"
     t.integer "format_quantity"
     t.integer "own_quantity"
     t.text "notes"
-    t.date "given_up_on"
     t.integer "discogs_id"
     t.integer "discogs_community_have"
     t.integer "discogs_community_want"

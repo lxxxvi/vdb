@@ -14,6 +14,7 @@ class ReleaseDecorator < SimpleDelegator
       ['Year', object.year],
       ['Genre', object.genre],
       ['Format quantity', object.format_quantity],
+      ['Format', object.format],
     ]
   end
 

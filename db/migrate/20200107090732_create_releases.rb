@@ -8,10 +8,10 @@ class CreateReleases < ActiveRecord::Migration[6.0]
       t.string :name, null: false
       t.string :year, null: true
       t.string :genre, null: true
+      t.string :format, null: true
       t.integer :format_quantity, null: true
       t.integer :own_quantity, null: true
       t.text :notes, null: true
-      t.date :given_up_on, null: true
 
       t.integer :discogs_id, null: true
       t.integer :discogs_community_have, null: true
