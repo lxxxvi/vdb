@@ -21,12 +21,12 @@ class DiscogsSearchTest < ActiveSupport::TestCase
   end
 
   test '#empty_result?' do
-    discogs_search_stub('empty', @user)
+    discogs_search_stub(@user, 'empty')
     assert DiscogsSearch.new(@user, 'empty').empty_result?
   end
 
   test '#results' do
-    discogs_search_stub('hsh005', @user)
+    discogs_search_stub(@user, 'hsh005')
     assert DiscogsSearch.new(@user, 'hsh005').results.any?
   end
 end

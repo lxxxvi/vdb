@@ -13,7 +13,7 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
 
   test 'creates a new release' do
     discogs_id = 6990537 # see ./test/fixtures/files/json/discogs_release_6990537.json
-    discogs_release_stub(discogs_id, @user)
+    discogs_release_stub(@user, discogs_id)
 
     assert_difference -> { Release.count } do
       post releases_path, params: { release: { discogs_id: discogs_id } }
@@ -26,7 +26,7 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
 
   test 'updates an existing release' do
     release = releases(:release_virgen_india)
-    discogs_release_stub(release.discogs_id, @user)
+    discogs_release_stub(@user, release.discogs_id)
 
     release.update(label: nil)
     assert_no_difference -> { Release.count } do
