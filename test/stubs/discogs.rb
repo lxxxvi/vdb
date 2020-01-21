@@ -1,6 +1,7 @@
 require 'stubs/discogs/base_stub'
 require 'stubs/discogs/search_stub'
 require 'stubs/discogs/release_stub'
+require 'stubs/discogs/invalid_token_stub'
 
 module DiscogsStubs
   def discogs_search_stub(catalog_number, user)
@@ -9,6 +10,10 @@ module DiscogsStubs
 
   def discogs_release_stub(discogs_id, user)
     to_stub(Discogs::ReleaseStub.new(discogs_id, user).stub_struct)
+  end
+
+  def invalid_token_stub
+    to_stub(Discogs::InvalidTokenStub.new.stub_struct)
   end
 
   def to_stub(stub_struct)

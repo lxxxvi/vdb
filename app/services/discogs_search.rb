@@ -1,11 +1,25 @@
 class DiscogsSearch
+  attr_reader :catno
+
   def initialize(user, catno)
     @user = user
     @catno = catno
   end
 
+  def no_discogs_token?
+    @user.discogs_token.blank?
+  end
+
   def invalid_token?
     message&.match?(/^Invalid consumer token/)
+  end
+
+  def empty_query?
+    @catno.blank?
+  end
+
+  def empty_result?
+    results.none?
   end
 
   def message
@@ -23,7 +37,7 @@ class DiscogsSearch
   end
 
   def discogs_search
-    return if @catno.empty?
+    return if @catno.blank?
 
     @discogs_search ||= discogs_api.search(nil,
                                            per_page: 10,

@@ -1,4 +1,4 @@
-- if current_user.discogs_token.blank?
+- if @search.no_discogs_token?
   .flex.py-4.bg-pink-100.text-pink-900
     .ml-auto.mr-auto{ class: 'w-2/3' }
       You need to
@@ -11,5 +11,20 @@
       There seems to be a problem with your Discogs token. Please head over to
       = link_to 'your profile page', profile_path
       and check your configured token.
+- elsif @search.empty_query?
+  .flex.py-4.bg-pink-100.text-pink-900
+    .ml-auto.mr-auto{ class: 'w-2/3' }
+      .text-gray-500
+        Sorry, we can't search for
+        %i nothing,
+        please try again.
+
+- elsif @search.empty_result?
+  .flex.py-4.bg-pink-100.text-pink-900
+    .ml-auto.mr-auto{ class: 'w-2/3' }
+      .text-gray-500
+        No result for query
+        %i= "'#{@search.catno}'"
+
 - else
   = render 'search_results', search: @search
