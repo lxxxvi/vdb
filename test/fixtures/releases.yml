@@ -6,6 +6,7 @@ release_virgen_india:
   name: "Virgen India"
   year: '1973'
   genre: "Folk, World, & Country"
+  format: 'LP'
   format_quantity: 1
   discogs_id: 4346534
   discogs_community_have: 33

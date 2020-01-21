@@ -8,6 +8,7 @@
     {
       "name": "Home Street Home Records",
       "entity_type": "1",
+      "thumbnail_url": "https://img.discogs.com/label-thumbnail_url.jpg",
       "catno": "HSH005",
       "resource_url": "https://api.discogs.com/labels/827644",
       "id": 827644,
@@ -22,7 +23,12 @@
       "average": 0.0
     },
     "have": 3,
-    "contributors": [],
+    "contributors": [
+      {
+        "username": "lxxxvi",
+        "resource_url": "https://api.discogs.com/users/lxxxvi"
+      }
+    ],
     "want": 1,
     "submitter": {
       "username": "lxxxvi",
@@ -36,6 +42,7 @@
       "name": "Home Street Home",
       "anv": "",
       "tracks": "",
+      "thumbnail_url": "https://img.discogs.com/artists-thumbnail_url.jpg",
       "role": "",
       "resource_url": "https://api.discogs.com/artists/3646852",
       "id": 3646852
@@ -43,12 +50,12 @@
   ],
   "images": [
     {
-      "uri": "",
+      "uri": "https://img.discogs.com/images-uri.jpg",
       "height": 600,
       "width": 600,
-      "resource_url": "",
+      "resource_url": "https://img.discogs.com/images-resource_url.jpg",
       "type": "primary",
-      "uri150": ""
+      "uri150": "https://img.discogs.com/label-uri150.jpg"
     }
   ],
   "format_quantity": 1,
@@ -58,11 +65,11 @@
     "Electronic",
     "Hip Hop"
   ],
-  "thumb": "",
+  "thumb": "https://img.discogs.com/thumb.jpg",
   "num_for_sale": 0,
   "title": "87trees",
   "date_changed": "2015-05-09T02:41:45-07:00",
-  "lowest_price": null,
+  "lowest_price": 22.33,
   "status": "Accepted",
   "released_formatted": "08 May 2015",
   "estimated_weight": 85,
@@ -80,6 +87,7 @@
           "name": "ill Figure (3)",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3565285",
           "id": 3565285
@@ -97,6 +105,7 @@
           "name": "Bustle Frog",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3598319",
           "id": 3598319
@@ -114,6 +123,7 @@
           "name": "Ra Pius",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/4397570",
           "id": 4397570
@@ -131,6 +141,7 @@
           "name": "dl.orion (2)",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/4397573",
           "id": 4397573
@@ -148,6 +159,7 @@
           "name": "Kneecap",
           "anv": "Burglar",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3892085",
           "id": 3892085
@@ -165,6 +177,7 @@
           "name": "Rob Chop The Vinylator",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3646851",
           "id": 3646851
@@ -182,6 +195,7 @@
           "name": "DRWN.",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3598313",
           "id": 3598313
@@ -199,6 +213,7 @@
           "name": "Arem",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "https://img.discogs.com/artists-thumbnail_url.jpg",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3598314",
           "id": 3598314
@@ -216,6 +231,7 @@
           "name": "DJ Okay",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3892086",
           "id": 3892086
@@ -233,6 +249,7 @@
           "name": "Justus' Felix",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/4397567",
           "id": 4397567
@@ -250,6 +267,7 @@
           "name": "Knut Butter",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3646848",
           "id": 3646848
@@ -267,6 +285,7 @@
           "name": "Rob Chop The Vinylator",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3646851",
           "id": 3646851
@@ -284,6 +303,7 @@
           "name": "MFK",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3924652",
           "id": 3924652
@@ -301,6 +321,7 @@
           "name": "slik nik (2)",
           "anv": "nick nick 2'2",
           "tracks": "",
+          "thumbnail_url": "https://img.discogs.com/artists-thumbnail_url.jpg",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3646849",
           "id": 3646849
@@ -318,6 +339,7 @@
           "name": "Arem",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "https://img.discogs.com/artists-thumbnail_url.jpg",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3598314",
           "id": 3598314
@@ -335,6 +357,7 @@
           "name": "DJ Okay",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3892086",
           "id": 3892086
@@ -352,6 +375,7 @@
           "name": "slik nik (2)",
           "anv": "nick nick 2'2",
           "tracks": "",
+          "thumbnail_url": "https://img.discogs.com/artists-thumbnail_url.jpg",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3646849",
           "id": 3646849
@@ -369,6 +393,7 @@
           "name": "Tinu (2)",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3646853",
           "id": 3646853
@@ -386,6 +411,7 @@
           "name": "DJO (6)",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/4397568",
           "id": 4397568
@@ -403,6 +429,7 @@
           "name": "Rob Chop The Vinylator",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3646851",
           "id": 3646851
@@ -420,6 +447,7 @@
           "name": "Khaderbai",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "https://img.discogs.com/artists-thumbnail_url.jpg",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/2628606",
           "id": 2628606
@@ -437,6 +465,7 @@
           "name": "Sai Gon",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/4397569",
           "id": 4397569
@@ -454,6 +483,7 @@
           "name": "Bustle Frog",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3598319",
           "id": 3598319
@@ -471,6 +501,7 @@
           "name": "Bustle Frog",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3598319",
           "id": 3598319
@@ -488,6 +519,7 @@
           "name": "Funk Bastard",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "https://img.discogs.com/artists-thumbnail_url.jpg",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3522555",
           "id": 3522555
@@ -505,6 +537,7 @@
           "name": "Bustle n Altega",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/4397571",
           "id": 4397571
@@ -522,6 +555,7 @@
           "name": "Lino (18)",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/4397572",
           "id": 4397572
@@ -539,6 +573,7 @@
           "name": "Tinu (2)",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/3646853",
           "id": 3646853
@@ -556,6 +591,7 @@
           "name": "Flowrian",
           "anv": "",
           "tracks": "",
+          "thumbnail_url": "https://img.discogs.com/artists-thumbnail_url.jpg",
           "role": "",
           "resource_url": "https://api.discogs.com/artists/1905203",
           "id": 1905203
