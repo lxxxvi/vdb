@@ -10,11 +10,15 @@ module Discogs
       raise 'implement in subclass'
     end
 
+    def search_endpoint
+      'https://api.discogs.com/database/search'
+    end
+
     def request_headers
       {
-        'Accept'=>'application/json',
-        'Accept-Encoding'=>'gzip,deflate',
-        'User-Agent'=>'VDB'
+        'Accept' => 'application/json',
+        'Accept-Encoding' => 'gzip,deflate',
+        'User-Agent' => 'VDB'
       }
     end
 

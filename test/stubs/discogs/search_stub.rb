@@ -6,7 +6,7 @@ module Discogs
     end
 
     def url
-      "https://api.discogs.com/database/search?catno=#{@catalog_number}&f=json&per_page=10&q&token=NO-DISCOGS-TOKEN&type=release"
+      "#{search_endpoint}?catno=#{@catalog_number}&f=json&per_page=10&q&token=NO-DISCOGS-TOKEN&type=release"
     end
 
     def response_fixture_file_path

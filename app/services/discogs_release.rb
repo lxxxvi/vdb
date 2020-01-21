@@ -1,3 +1,4 @@
+# rubocop:disable Rails/Delegate
 class DiscogsRelease
   attr_reader :model, :user
 
@@ -10,6 +11,8 @@ class DiscogsRelease
     new(DiscogsApi.for(user).get_release(discogs_id), user)
   end
 
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/AbcSize
   def to_release
     user.releases.find_or_initialize_by(discogs_id: discogs_id).tap do |release|
       release.catalog_number = catalog_number
@@ -29,6 +32,8 @@ class DiscogsRelease
       release.discogs_uri = discogs_uri
     end
   end
+  # rubocop:enable Metrics/AbcSize
+  # rubocop:enable Metrics/MethodLength
 
   def catalog_number
     model.labels.first.catno
@@ -96,3 +101,4 @@ class DiscogsRelease
     model.uri
   end
 end
+# rubocop:enable Rails/Delegate
