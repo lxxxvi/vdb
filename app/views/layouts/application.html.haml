@@ -16,7 +16,7 @@
             %div{ class: 'w-1/2' }
               %nav.inline
                 - if user_signed_in?
-                  = nav_link_to 'Releases', releases_path, class: 'nav-link', active_on: %r{/releases}
+                  = nav_link_to 'Library', library_path, class: 'nav-link', active_on: %r{/releases|/library}
                   = nav_link_to 'Profile', profile_path, class: 'ml-8 nav-link', active_on: %r{/profile}
                 - else
                   = link_to 'Sign in', new_user_session_path, class: 'nav-link'

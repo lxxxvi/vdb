@@ -1,8 +1,4 @@
 class ReleasesController < ApplicationController
-  def index
-    @pagy, @releases = pagy(Release.of_user(current_user).ordered)
-  end
-
   def new
     @release = Release.new
   end
@@ -14,7 +10,7 @@ class ReleasesController < ApplicationController
 
     if @release.save
       flash[:success] = 'Release created'
-      redirect_to releases_path
+      redirect_to library_path
     else
       flash.now[:alert] = 'Please check input'
       render 'new'
@@ -34,7 +30,7 @@ class ReleasesController < ApplicationController
       flash[:alert] = 'Adding release failed!'
     end
 
-    redirect_to releases_path
+    redirect_to library_path
   end
 
   def release_params
