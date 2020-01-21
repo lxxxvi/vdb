@@ -6,11 +6,6 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
   end
 
-  test 'should get index' do
-    get releases_path
-    assert_response :success
-  end
-
   test 'creates a new release' do
     discogs_id = 6990537 # see ./test/fixtures/files/json/discogs_release_6990537.json
     discogs_release_stub(@user, discogs_id)

@@ -18,7 +18,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
      click_on 'Sign in'
    end
 
-    assert_selector 'h1', text: 'Releases'
+    assert_selector 'h1', text: 'Library'
   end
 
   def sign_out

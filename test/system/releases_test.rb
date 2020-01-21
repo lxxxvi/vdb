@@ -1,26 +1,10 @@
 require 'application_system_test_case'
 
 class ReleasesTest < ApplicationSystemTestCase
-  test 'visits the index' do
-    sign_in_as(:pete)
-
-    visit releases_path
-    assert_selector 'h1', text: 'Releases'
-    assert_selector '.test-release-name', text: 'Virgen India'
-  end
-
-  test 'visits the index, sees only own releases' do
-    sign_in_as(:primo)
-
-    visit releases_path
-    assert_selector 'h1', text: 'Releases'
-    assert_selector '.test-release-name', text: 'Virgen India', count: 0
-  end
-
   test 'creates a new release without Discogs ID' do
     sign_in_as(:pete)
 
-    visit releases_path
+    visit library_path
     click_on 'Add release'
     assert_selector 'h1', text: 'Add release'
     assert_selector 'a', text: 'Cancel'
