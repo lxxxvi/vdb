@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   driven_by :rack_test
@@ -15,8 +15,8 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     fill_in 'Password', with: 'abc'
 
     within('form') do
-     click_on 'Sign in'
-   end
+      click_on 'Sign in'
+    end
 
     assert_selector 'h1', text: 'Library'
   end

@@ -4,9 +4,11 @@ class DiscogsReleaseTest < ActiveSupport::TestCase
   test '#to_release' do
     user = users(:pete)
 
-    discogs_release_stub(user, 6990537)
+    discogs_id = 6990537 # rubocop:disable Style/NumericLiterals
 
-    DiscogsRelease.find(6990537, user).to_release.tap do |release|
+    discogs_release_stub(user, discogs_id)
+
+    DiscogsRelease.find(discogs_id, user).to_release.tap do |release|
       assert release.is_a?(Release)
 
       assert_equal 'HSH005', release.catalog_number

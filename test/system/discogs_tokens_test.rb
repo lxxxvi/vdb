@@ -1,4 +1,4 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class DiscogsTokensTest < ApplicationSystemTestCase
   test 'update the discogs token' do

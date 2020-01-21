@@ -6,15 +6,7 @@ class ReleasesController < ApplicationController
   def create
     return handle_with_discogs_id if release_params[:discogs_id].present?
 
-    @release = current_user.releases.new(release_params)
-
-    if @release.save
-      flash[:success] = 'Release created'
-      redirect_to library_path
-    else
-      flash.now[:alert] = 'Please check input'
-      render 'new'
-    end
+    handle_without_discogs_id
   end
 
   private
@@ -33,7 +25,20 @@ class ReleasesController < ApplicationController
     redirect_to library_path
   end
 
+  def handle_without_discogs_id
+    @release = current_user.releases.new(release_params)
+
+    if @release.save
+      flash[:success] = 'Release created'
+      redirect_to library_path
+    else
+      flash.now[:alert] = 'Please check input'
+      render 'new'
+    end
+  end
+
   def release_params
-    params.require(:release).permit(:discogs_id, :category_number, :label, :artist, :name, :year, :genre, :format_quantity)
+    params.require(:release).permit(:discogs_id, :category_number, :label, :artist, :name, :year, :genre,
+                                    :format_quantity)
   end
 end

@@ -1,4 +1,6 @@
 class CreateReleases < ActiveRecord::Migration[6.0]
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/AbcSize
   def change
     create_table :releases do |t|
       t.references :user, foreign_key: true, index: true
@@ -22,10 +24,12 @@ class CreateReleases < ActiveRecord::Migration[6.0]
       t.string :discogs_api_resource_url, null: true
       t.string :discogs_uri, null: true
 
-      t.index [:artist, :name], unique: true
-      t.index [:discogs_id], unique: true
+      t.index %i[artist name], unique: true
+      t.index %i[discogs_id], unique: true
 
       t.timestamps
     end
   end
+  # rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/AbcSize
 end

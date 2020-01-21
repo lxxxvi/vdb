@@ -9,7 +9,7 @@ namespace :dev do
       puts "Skipping\n"
     else
       puts 'Updating all users with DISCOGS_TOKEN'
-      User.update_all(discogs_token: discogs_token)
+      User.update_all(discogs_token: discogs_token) # rubocop:disable Rails/SkipsModelValidations
       puts "Done\n"
     end
   end
