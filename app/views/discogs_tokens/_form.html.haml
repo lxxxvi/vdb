@@ -1,0 +1,9 @@
+= form_with model: user, url: discogs_token_path do |f|
+  .flex.mb-6
+    .w-full
+      = f.label :discogs_token
+      = f.text_field :discogs_token, class: 'border w-1/2 my-2'
+  .flex.mt-6
+    .w-full
+      = f.submit 'Set token', class: 'green-button'
+      = link_to 'Cancel', profile_path, class: 'ml-4 weak-link'

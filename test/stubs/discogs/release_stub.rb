@@ -1,8 +1,8 @@
 module Discogs
   class ReleaseStub < BaseStub
-    def initialize(discogs_id, user)
-      @discogs_id = discogs_id
+    def initialize(user, discogs_id)
       @user = user
+      @discogs_id = discogs_id
     end
 
     def url

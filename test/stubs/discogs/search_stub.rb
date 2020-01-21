@@ -1,8 +1,8 @@
 module Discogs
   class SearchStub < BaseStub
-    def initialize(catalog_number, user)
-      @catalog_number = catalog_number
+    def initialize(user, catalog_number)
       @user = user
+      @catalog_number = catalog_number
     end
 
     def url
