@@ -42,7 +42,6 @@ class DiscogsSearch
     @discogs_search ||= discogs_api.search(nil,
                                            per_page: 10,
                                            type: :release,
-                                           catno: @catno,
-                                           format: 'vinyl')
+                                           catno: @catno)
   end
 end

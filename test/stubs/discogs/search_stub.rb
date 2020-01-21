@@ -6,15 +6,11 @@ module Discogs
     end
 
     def url
-      "#{search_endpoint}?#{parameters}"
+      "#{search_endpoint}?catno=#{@catalog_number}&f=json&per_page=10&q&token=NO-DISCOGS-TOKEN&type=release"
     end
 
     def response_fixture_file_path
       "json/discogs_search_result_#{@catalog_number.downcase}.json"
-    end
-
-    def parameters
-      "catno=#{@catalog_number}&f=json&format=vinyl&per_page=10&q&token=NO-DISCOGS-TOKEN&type=release"
     end
   end
 end
