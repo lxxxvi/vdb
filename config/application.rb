@@ -23,7 +23,5 @@ module Vdb
   class Application < Rails::Application
     config.load_defaults 6.0
     config.action_view.form_with_generates_remote_forms = false
-
-    config.offline_mode = false
   end
 end

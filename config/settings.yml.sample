@@ -1,5 +1,0 @@
-development:
-  offline_mode: true
-
-test:
-  offline_mode: true

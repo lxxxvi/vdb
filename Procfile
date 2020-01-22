@@ -1,1 +1,1 @@
-release: bin/setup
+release: echo "noob"
