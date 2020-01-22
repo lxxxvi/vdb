@@ -53,10 +53,4 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
-  if Rails.root.join('config/settings.yml').exist?
-    config_for(:settings).tap do |settings|
-      config.offline_mode = settings.offline_mode
-    end
-  end
 end
