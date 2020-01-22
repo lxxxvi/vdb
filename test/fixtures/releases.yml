@@ -8,11 +8,11 @@ release_virgen_india:
   genre: "Folk, World, & Country"
   format: 'LP'
   format_quantity: 1
-  discogs_id: 4346534
+  discogs_release_id: 4346534
   discogs_community_have: 33
   discogs_community_want: 6
   discogs_lowest_price: 2.1
   discogs_number_for_sale: 38
-  discogs_cover_thumb_url: "/images/cover_thumb_discogs_id_4346534.jpg"
+  discogs_cover_thumb_url: "/images/cover_thumb_discogs_release_id_4346534.jpg"
   discogs_api_resource_url: "https://api.discogs.com/releases/4346534"
   discogs_uri: "https://www.discogs.com/Jorge-Cafrune-Y-Marito-Virgen-India/release/4346534"

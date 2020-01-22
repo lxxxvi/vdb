@@ -2,7 +2,7 @@ class Release < ApplicationRecord
   belongs_to :user
 
   validates :artist, :name, presence: true
-  validates :format_quantity, :discogs_id, :discogs_community_have,
+  validates :format_quantity, :discogs_release_id, :discogs_community_have,
             :discogs_community_want, :discogs_number_for_sale,
             numericality: { only_integer: true }, allow_nil: true
   validates :discogs_lowest_price, numericality: true, allow_nil: true

@@ -8,8 +8,8 @@ module DiscogsStubs
     to_stub(Discogs::SearchStub.new(user, catalog_number).stub_struct)
   end
 
-  def discogs_release_stub(user, discogs_id)
-    to_stub(Discogs::ReleaseStub.new(user, discogs_id).stub_struct)
+  def discogs_release_stub(user, discogs_release_id)
+    to_stub(Discogs::ReleaseStub.new(user, discogs_release_id).stub_struct)
   end
 
   def invalid_token_stub
