@@ -36,7 +36,7 @@
             .pl-8{ class: 'w-1/6' }
               .flex.h-full
                 .w-full
-                  - if release.discogs_id.nil?
+                  - if release.discogs_release_id.nil?
                     .text-gray-500.text-right.text-xs No Discogs data
                   -else
                     .flex.text-right.flex-wrap

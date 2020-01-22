@@ -15,7 +15,7 @@ class CreateReleases < ActiveRecord::Migration[6.0]
       t.integer :own_quantity, null: true
       t.text :notes, null: true
 
-      t.integer :discogs_id, null: true
+      t.integer :discogs_release_id, null: true
       t.integer :discogs_community_have, null: true
       t.integer :discogs_community_want, null: true
       t.decimal :discogs_lowest_price, precision: 10, scale: 2, null: true
@@ -25,7 +25,7 @@ class CreateReleases < ActiveRecord::Migration[6.0]
       t.string :discogs_uri, null: true
 
       t.index %i[artist name], unique: true
-      t.index %i[discogs_id], unique: true
+      t.index %i[discogs_release_id], unique: true
 
       t.timestamps
     end

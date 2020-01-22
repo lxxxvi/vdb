@@ -45,6 +45,6 @@
                       = "#{item.community['have']} / #{item.community['want']}"
               .flex
                 .w-full.text-right.pr-2
-                  = form_with(model: Release.new(discogs_id: item.id)) do |f|
-                    = f.hidden_field :discogs_id
+                  = form_with(model: Release.new(discogs_release_id: item.id)) do |f|
+                    = f.hidden_field :discogs_release_id
                     = f.submit 'Add to library', class: 'green-button'

@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_01_07_090732) do
     t.integer "format_quantity"
     t.integer "own_quantity"
     t.text "notes"
-    t.integer "discogs_id"
+    t.integer "discogs_release_id"
     t.integer "discogs_community_have"
     t.integer "discogs_community_want"
     t.decimal "discogs_lowest_price", precision: 10, scale: 2
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_01_07_090732) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist", "name"], name: "index_releases_on_artist_and_name", unique: true
-    t.index ["discogs_id"], name: "index_releases_on_discogs_id", unique: true
+    t.index ["discogs_release_id"], name: "index_releases_on_discogs_release_id", unique: true
     t.index ["user_id"], name: "index_releases_on_user_id"
   end
 

@@ -7,11 +7,11 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'creates a new release' do
-    discogs_id = 6990537 # rubocop:disable Style/NumericLiterals
-    discogs_release_stub(@user, discogs_id)
+    discogs_release_id = 6990537 # rubocop:disable Style/NumericLiterals
+    discogs_release_stub(@user, discogs_release_id)
 
     assert_difference -> { Release.count } do
-      post releases_path, params: { release: { discogs_id: discogs_id } }
+      post releases_path, params: { release: { discogs_release_id: discogs_release_id } }
     end
 
     Release.last.tap do |release|
@@ -21,12 +21,12 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
 
   test 'updates an existing release' do
     release = releases(:release_virgen_india)
-    discogs_release_stub(@user, release.discogs_id)
+    discogs_release_stub(@user, release.discogs_release_id)
 
     release.update(label: nil)
     assert_no_difference -> { Release.count } do
       assert_changes -> { release.reload.label }, from: nil, to: 'CBS' do
-        post releases_path, params: { release: { discogs_id: release.discogs_id } }
+        post releases_path, params: { release: { discogs_release_id: release.discogs_release_id } }
       end
     end
   end

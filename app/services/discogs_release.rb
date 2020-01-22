@@ -7,14 +7,14 @@ class DiscogsRelease
     @user = user
   end
 
-  def self.find(discogs_id, user)
-    new(DiscogsApi.for(user).get_release(discogs_id), user)
+  def self.find(discogs_release_id, user)
+    new(DiscogsApi.for(user).get_release(discogs_release_id), user)
   end
 
   # rubocop:disable Metrics/MethodLength
   # rubocop:disable Metrics/AbcSize
   def to_release
-    user.releases.find_or_initialize_by(discogs_id: discogs_id).tap do |release|
+    user.releases.find_or_initialize_by(discogs_release_id: discogs_release_id).tap do |release|
       release.catalog_number = catalog_number
       release.label = label
       release.artist = artist
@@ -69,7 +69,7 @@ class DiscogsRelease
     model.format_quantity
   end
 
-  def discogs_id
+  def discogs_release_id
     model.id
   end
 
