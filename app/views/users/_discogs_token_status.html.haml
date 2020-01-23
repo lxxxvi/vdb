@@ -1,0 +1,10 @@
+.text-xs
+  Status:
+  .inline.discogs-token--status
+    - if @user.discogs_token_not_available?
+      .text-gray= user.discogs_token_status
+    - elsif @user.discogs_token_valid?
+      .text-green-500= user.discogs_token_status.capitalize
+    - else
+      .text-red-500= user.discogs_token_status.capitalize
+

@@ -1,10 +1,15 @@
 DEFAULTS: &DEFAULTS
   discogs_token: 'NO-DISCOGS-TOKEN'
+  discogs_token_status: 'n/a'
+  discogs_token_status_checked_at:
   encrypted_password: "$2a$11$5xm5HkfdjkDX0Lif6f1S8u/lbl2/OGovUyUEB3TvqQ5oF3d/pybEe" # 'abc'
 
 pete:
   <<: *DEFAULTS
   email: pete@rock.dev
+  discogs_token: 'PETES-DISCOGS-TOKEN'
+  discogs_token_status: 'valid'
+  discogs_token_status_checked_at: '2020-02-02 02:02:02'
 
 primo:
   <<: *DEFAULTS
