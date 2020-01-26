@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_07_090732) do
+ActiveRecord::Schema.define(version: 2020_01_26_142532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "releases", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.string "catalog_number"
     t.string "label"
     t.string "artist", null: false
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 2020_01_07_090732) do
     t.string "discogs_uri"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["artist", "name"], name: "index_releases_on_artist_and_name", unique: true
-    t.index ["discogs_release_id"], name: "index_releases_on_discogs_release_id", unique: true
+    t.index ["user_id", "discogs_release_id"], name: "index_releases_on_user_id_and_discogs_release_id", unique: true
+    t.index ["user_id", "label", "catalog_number"], name: "index_releases_on_user_id_and_label_and_catalog_number", unique: true
     t.index ["user_id"], name: "index_releases_on_user_id"
   end
 
