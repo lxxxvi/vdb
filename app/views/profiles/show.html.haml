@@ -8,19 +8,21 @@
       %div{ class: 'w-1/3' }
         .flex.flex-wrap.text-center
           .w-full.text-3xl
-            = @user.releases.count
+            = @user.decorate.display_releases_count
           .w-full.text-xs.text-gray-500.tracking-wide
-            = 'release'.pluralize(@user.releases.count)
+            = 'release'.pluralize(@user.decorate.display_releases_count)
       %div{ class: 'w-1/3' }
         .flex.flex-wrap.text-center
           .w-full.text-3xl
-            .currency-dollar= @user.releases.sum(&:discogs_lowest_price)
+            .currency-dollar
+              = @user.decorate.display_estimated_total_worth
           .w-full.text-xs.text-gray-500.tracking-wide
             Estimated total worth
       %div{ class: 'w-1/3' }
         .flex.flex-wrap.text-center
           .w-full.text-3xl
-            .currency-dollar= @user.releases.maximum(:discogs_lowest_price)
+            .currency-dollar
+              = @user.decorate.display_most_valuable_release
           .w-full.text-xs.text-gray-500.tracking-wide
             Most valuable release
 

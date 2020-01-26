@@ -20,4 +20,10 @@ class ReleaseTest < ActiveSupport::TestCase
       @new_release.catalog_number = 'something else'
     end
   end
+
+  test '.with_discogs_lowest_price' do
+    assert_difference -> { Release.with_discogs_lowest_price.count }, 1 do
+      releases(:release_streisand).update(discogs_lowest_price: 1.0)
+    end
+  end
 end

@@ -16,3 +16,10 @@ release_virgen_india:
   discogs_cover_thumb_url: "/images/cover_thumb_discogs_release_id_4346534.jpg"
   discogs_api_resource_url: "https://api.discogs.com/releases/4346534"
   discogs_uri: "https://www.discogs.com/Jorge-Cafrune-Y-Marito-Virgen-India/release/4346534"
+
+release_streisand:
+  user: pete
+  catalog_number: 'STRSND 001'
+  label: 'Streisand Label'
+  artist: 'Barbra Streisand'
+  name: 'I am Barbra'
