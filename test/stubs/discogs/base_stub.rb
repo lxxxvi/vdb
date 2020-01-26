@@ -1,6 +1,6 @@
 module Discogs
   class BaseStub
-    StubStruct = Struct.new(:url, :request_headers, :response_fixture_file_path)
+    StubStruct = Struct.new(:url, :request_headers, :response_fixture_file_path, :response_status)
 
     def stub_struct
       StubStruct.new(url, request_headers, response_fixture_file_path)
@@ -24,6 +24,10 @@ module Discogs
 
     def response_fixture_file_path
       raise 'implement in subclass'
+    end
+
+    def response_status
+      200 # override if necessary
     end
   end
 end

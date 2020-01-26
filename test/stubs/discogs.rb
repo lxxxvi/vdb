@@ -2,6 +2,7 @@ require 'stubs/discogs/base_stub'
 require 'stubs/discogs/search_stub'
 require 'stubs/discogs/release_stub'
 require 'stubs/discogs/invalid_token_stub'
+require 'stubs/discogs/identity_stub'
 
 module DiscogsStubs
   def discogs_search_stub(user, catalog_number)
@@ -12,15 +13,19 @@ module DiscogsStubs
     to_stub(Discogs::ReleaseStub.new(user, discogs_release_id).stub_struct)
   end
 
-  def invalid_token_stub
-    to_stub(Discogs::InvalidTokenStub.new.stub_struct)
+  def discogs_invalid_token_stub(user)
+    to_stub(Discogs::InvalidTokenStub.new(user).stub_struct)
+  end
+
+  def discogs_identity_stub(user, status = :valid)
+    to_stub(Discogs::IdentityStub.new(user, status).stub_struct)
   end
 
   def to_stub(stub_struct)
     stub_request(:get, stub_struct.url)
       .with(headers: stub_struct.request_headers)
       .to_return(
-        status: 200,
+        status: stub_struct.response_status,
         body: file_fixture(stub_struct.response_fixture_file_path).read,
         headers: {}
       )

@@ -12,7 +12,7 @@ class DiscogsSearchTest < ActiveSupport::TestCase
   end
 
   test '#invalid_token?' do
-    invalid_token_stub
+    discogs_invalid_token_stub(@user)
     assert DiscogsSearch.new(@user, 'FOOBAR').invalid_token?
   end
 

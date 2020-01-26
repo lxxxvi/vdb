@@ -6,7 +6,7 @@ module Discogs
     end
 
     def url
-      "https://api.discogs.com/releases/#{@discogs_release_id}?f=json&token=NO-DISCOGS-TOKEN"
+      "https://api.discogs.com/releases/#{@discogs_release_id}?f=json&token=#{@user.discogs_token}"
     end
 
     def response_fixture_file_path

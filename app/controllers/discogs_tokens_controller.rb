@@ -6,7 +6,7 @@ class DiscogsTokensController < ApplicationController
   def update
     @user = current_user
 
-    if @user.update(discogs_token_params)
+    if @user.update_and_check_discogs_token(discogs_token_params[:discogs_token])
       redirect_to profile_path
     else
       render 'new'
