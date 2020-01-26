@@ -21,6 +21,10 @@ class User < ApplicationRecord
            discogs_token_status_checked_at: Time.zone.now)
   end
 
+  def decorate
+    @decorate ||= UserDecorator.new(self)
+  end
+
   private
 
   def initialize_discogs_token_status

@@ -13,6 +13,7 @@ class Release < ApplicationRecord
 
   scope :of_user, ->(user) { where(user: user) }
   scope :ordered, -> { order(created_at: :desc) }
+  scope :with_discogs_lowest_price, -> { where.not(discogs_lowest_price: nil) }
 
   def decorate
     @decorate ||= ReleaseDecorator.new(self)
