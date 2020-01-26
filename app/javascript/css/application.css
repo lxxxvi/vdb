@@ -73,6 +73,11 @@ input[type="password"] {
   grid-row-end: 3;
 }
 
+.currency-dollar::before {
+  content: '$';
+  @apply text-base mr-2 text-gray-600;
+}
+
 input.has-error {
   @apply border border-red-300;
 }
