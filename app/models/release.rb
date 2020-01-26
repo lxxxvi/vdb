@@ -6,6 +6,8 @@ class Release < ApplicationRecord
             :discogs_community_want, :discogs_number_for_sale,
             numericality: { only_integer: true }, allow_nil: true
   validates :discogs_lowest_price, numericality: true, allow_nil: true
+  validates :discogs_release_id, uniqueness: { scope: :user_id }
+  validates :catalog_number, uniqueness: { scope: %i[user_id label] }
 
   after_initialize :initialize_format_quantity
 
