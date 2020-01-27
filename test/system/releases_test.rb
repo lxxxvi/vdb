@@ -1,7 +1,7 @@
 require 'application_system_test_case'
 
 class ReleasesTest < ApplicationSystemTestCase
-  test 'creates a new release without Discogs ID' do
+  test 'creates a new release without Discogs Release ID' do
     sign_in_as(:pete)
 
     visit library_path
@@ -17,6 +17,26 @@ class ReleasesTest < ApplicationSystemTestCase
       fill_in 'Year', with: '1970'
       fill_in 'Genre', with: 'Dixie'
       fill_in 'Format quantity', with: '1'
+
+      click_on 'Add release'
+    end
+
+    assert_selector '.flash-success', text: 'Release created'
+  end
+
+  test 'creates a new release using Discogs Relase ID' do
+    user = users(:pete)
+    sign_in_as(:pete)
+
+    discogs_release_id = '6990537'
+    discogs_release_stub(user, discogs_release_id)
+
+    visit library_path
+    click_on 'Add release'
+    assert_selector 'h1', text: 'Add release'
+
+    within('.release-form') do
+      fill_in 'Discogs Release ID', with: discogs_release_id
 
       click_on 'Add release'
     end
