@@ -25,14 +25,18 @@ class ReleasesTest < ApplicationSystemTestCase
   end
 
   test 'creates a new release using Discogs Relase ID' do
+    user = users(:pete)
     sign_in_as(:pete)
+
+    discogs_release_id = '6990537'
+    discogs_release_stub(user, discogs_release_id)
 
     visit library_path
     click_on 'Add release'
     assert_selector 'h1', text: 'Add release'
 
-    within('.discogs-release-id-form') do
-      fill_in 'Discogs Relase ID', with: 6990537
+    within('.release-form') do
+      fill_in 'Discogs Release ID', with: discogs_release_id
 
       click_on 'Add release'
     end

@@ -7,7 +7,7 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'creates a new release' do
-    discogs_release_id = 6990537 # rubocop:disable Style/NumericLiterals
+    discogs_release_id = '6990537'
     discogs_release_stub(@user, discogs_release_id)
 
     assert_difference -> { Release.count } do

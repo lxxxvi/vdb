@@ -1,52 +1,7 @@
-.full.mx-4.mt-8
+.flex.mx-4.mt-8
   .ml-auto.mr-auto{ class: 'w-2/3' }
     %h1 Add release
 
-.full.mx-4.mt-8
+.flex.mx-4.mt-8
   .ml-auto.mr-auto{ class: 'w-2/3' }
-    = form_with(model: @release, class: 'release-form') do |f|
-      .flex.mb-8
-        .pr-1{ class: 'w-1/3' }
-          = f.label :label
-          = f.text_field :label,
-                         class: 'w-full shadow',
-                         placeholder: 'Ninja Tune'
-
-        .pr-1{ class: 'w-1/6' }
-          = f.label :catalog_number, 'Catalog #'
-          = f.text_field :catalog_number, class: 'w-full shadow', placeholder: 'ABC 123'
-
-      .flex.mb-8
-        .pr-1{ class: 'w-1/3' }
-          = f.label :artist, 'Artist (*)'
-          = f.text_field :artist,
-                         class: "w-full shadow #{@release.errors.key?(:artist) ? 'has-error' : nil}",
-                         placeholder: 'Bonobo'
-          - @release.errors.full_messages_for(:artist).each do |message|
-            .text-xs.text-red-400= message
-
-        .pr-1{ class: 'w-1/3' }
-          = f.label :name, 'Release name (*)'
-          = f.text_field :name,
-                         class: "w-full shadow #{@release.errors.key?(:artist) ? 'has-error' : nil}",
-                         placeholder: 'Black Sands'
-          - @release.errors.full_messages_for(:name).each do |message|
-            .text-xs.text-red-400= message
-
-      .flex.mb-8
-        .pr-1{ class: 'w-1/6' }
-          = f.label :year
-          = f.text_field :year, class: 'w-full shadow', placeholder: '2010'
-        .pr-1{ class: 'w-1/6' }
-          = f.label :genre
-          = f.text_field :genre,
-                         class: 'w-full shadow',
-                         placeholder: 'Electronic'
-        .pr-1{ class: 'w-1/6' }
-          = f.label :format_quantity
-          = f.number_field :format_quantity, min: 1, step: 1, class: 'w-full shadow', placeholder: '2'
-
-      .flex.mt-12
-        .w-full
-          = f.submit 'Add release', class: 'green-button'
-          = link_to 'Cancel', library_path, class: 'text-sm ml-4 weak-link'
+    = render 'form', release: @release
