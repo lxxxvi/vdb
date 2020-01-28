@@ -1,8 +1,10 @@
-.flex.m-8
+.flex.mx-4.my-8
   .w-full.ml-auto.mr-auto
     %h1 Profile
 
-.flex.flex-wrap.m-8{ class: 'md:flex-row' }
+.flex.flex-wrap.mx-4.my-8
+  .w-full.mb-4
+    %h2.text-gray-500.text-xs Your library
   .mb-6{ class: 'w-1/2' }
     .flex.flex-wrap.text-center
       .w-full.text-3xl
@@ -26,16 +28,16 @@
 
 .border-t
 
-.flex.m-8.discogs-token
-  .w-full.ml-auto.mr-auto
-    - if @user.discogs_token.blank?
+.flex.flex-col.discogs-token.mx-4.my-8
+  .flex-1.mb-4
+    %h2.text-gray-500.text-xs Your discogs token
+  - if @user.discogs_token.blank?
+    .flex-1
       In order to use the search functionality, you need to
       = link_to 'configure your discogs token', edit_discogs_token_path
-    - else
-      .flex.flex-col
-        .flex-1.mb-2.text-gray-500.text-xs Your discogs token
-        .flex-1.mb-4
-          %input.text-sm.font-mono.border.w-full.p-2.mb-1.bg-blue-100{ readonly: :readonly, value: @user.discogs_token }
-          = render 'users/discogs_token_status', user: @user
-        .flex-1
-          = link_to 'Set token', edit_discogs_token_path, class: 'green-button w-full'
+  - else
+    .flex-1.mb-4
+      %input.text-sm.font-mono.border.w-full.p-2.mb-1.bg-blue-100{ readonly: :readonly, value: @user.discogs_token }
+      = render 'users/discogs_token_status', user: @user
+    .flex-1
+      = link_to 'Set token', edit_discogs_token_path, class: 'green-button w-full'

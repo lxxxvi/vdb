@@ -1,7 +1,5 @@
 .flex.mx-4.mt-8
-  .ml-auto.mr-auto{ class: 'w-2/3' }
+  .w-full.ml-auto.mr-auto
     %h1 Add release
 
-.flex.mx-4.mt-8
-  .ml-auto.mr-auto{ class: 'w-2/3' }
-    = render 'form', release: @release
+= render 'form', release: @release

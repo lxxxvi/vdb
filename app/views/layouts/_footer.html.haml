@@ -1,6 +1,6 @@
 - if user_signed_in?
-  %footer.footer.bg-blue-100.py-8.mt-8
+  %footer.footer.bg-blue-100.py-4.mt-8
     .flex
       .w-full.ml-auto.mr-auto
         .text-center
-          = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'weak-link'
+          = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'weak-link text-sm'

@@ -1,4 +1,4 @@
-.flex.m-8
+.flex.mx-4.my-8
   .w-full
     %h1.text-2xl Sign in
 
@@ -6,7 +6,7 @@
   .ml-auto.mr-auto.w-full
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .flex.bg-gray-100
-        .w-full.m-8
+        .w-full.mx-4.my-8
           .flex.mb-4
             .w-full
               = f.label :email
