@@ -32,10 +32,8 @@ class ReleasesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'destroy release' do
-    release = releases(:release_virgen_india)
-
     assert_difference -> { Release.count }, -1 do
-      delete release_path(releases)
+      delete release_path(releases(:release_virgen_india))
     end
 
     follow_redirect!
