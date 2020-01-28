@@ -1,0 +1,5 @@
+.flash-banner
+  - flash.each do |key, text|
+    .py-3.text-gray-700.flash{ class: "flash-#{key}" }
+      .flex
+        .ml-auto.mr-auto{ class: 'w-2/3' }= text

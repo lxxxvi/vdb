@@ -24,11 +24,6 @@ a {
   @apply text-blue-400;
 }
 
-.nav-link {
-  @apply text-gray-100 text-lg py-3 inline-block tracking-wide;
-}
-
-.nav-link:hover,
 .nav-link-active {
   @apply text-yellow-400 no-underline;
 }
