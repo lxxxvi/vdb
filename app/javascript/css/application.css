@@ -52,6 +52,14 @@ input[type="password"] {
   @apply bg-green-600 cursor-pointer;
 }
 
+.dangerous-link {
+  @apply text-red-300;
+}
+
+.dangerous-link:hover {
+  @apply text-red-600 cursor-pointer;
+}
+
 .flash-alert {
   @apply bg-yellow-200;
 }

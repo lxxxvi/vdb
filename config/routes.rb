@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'library', to: 'library#show', as: :library
   scope :library do
-    resources :releases, only: %i[new create]
+    resources :releases, only: %i[new create destroy]
   end
 
   get :profile, to: 'profiles#show'
