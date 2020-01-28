@@ -9,6 +9,18 @@ class ReleasesController < ApplicationController
     handle_without_discogs_release_id
   end
 
+  def destroy
+    release = current_user.releases.find(params[:id])
+
+    if release.destroy
+      flash[:success] = 'Release removed'
+    else
+      flash[:alert] = 'Removing release failed!'
+    end
+
+    redirect_to library_path
+  end
+
   private
 
   def handle_with_discogs_release_id

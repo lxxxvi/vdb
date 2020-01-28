@@ -43,4 +43,14 @@ class ReleasesTest < ApplicationSystemTestCase
 
     assert_selector '.flash-success', text: 'Release created'
   end
+
+  test 'removes a release' do
+    sign_in_as(:pete)
+
+    visit library_path
+
+    click_on 'Remove', match: :first
+
+    assert_selector '.flash-success', text: 'Release removed'
+  end
 end
