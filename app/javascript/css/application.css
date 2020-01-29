@@ -24,6 +24,14 @@ a {
   @apply text-blue-400;
 }
 
+.nav-link {
+  @apply text-white;
+}
+
+.nav-link:hover {
+  @apply text-yellow-400;
+}
+
 .nav-link-active {
   @apply text-yellow-400 no-underline;
 }
