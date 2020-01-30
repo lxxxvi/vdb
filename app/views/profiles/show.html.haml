@@ -37,7 +37,7 @@
       = link_to 'configure your discogs token', edit_discogs_token_path
   - else
     .flex-1.mb-4
-      %input.text-sm.font-mono.border.w-full.p-2.mb-1.bg-blue-100{ readonly: :readonly, value: @user.discogs_token }
+      = text_field_tag :discogs_token, @user.discogs_token, class: 'text-s font-mono border w-full p-2 mb-1 bg-blue-100'
       = render 'users/discogs_token_status', user: @user
     .flex-1
       = link_to 'Set token', edit_discogs_token_path, class: 'green-button w-full'

@@ -17,7 +17,7 @@ class DiscogsTokensTest < ApplicationSystemTestCase
     fill_in 'Discogs token', with: 'thenewtoken'
     click_on 'Set token'
 
-    assert_selector '.discogs-token', text: 'thenewtoken'
+    assert_field 'discogs_token', with: 'thenewtoken'
   end
 
   test 'sees information about the missing discogs token' do
@@ -42,7 +42,8 @@ class DiscogsTokensTest < ApplicationSystemTestCase
     click_on 'Set token'
     fill_in 'Discogs token', with: 'INVALID-TOKEN'
     click_on 'Set token'
-    assert_selector '.discogs-token', text: 'INVALID-TOKEN'
+
+    assert_field 'discogs_token', with: 'INVALID-TOKEN'
     assert_selector '.discogs-token--status', text: 'Invalid'
   end
 end
