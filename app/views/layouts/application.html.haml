@@ -2,6 +2,8 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}/
     %title Vdb
     = csrf_meta_tags
     = csp_meta_tag
@@ -9,31 +11,11 @@
     = stylesheet_pack_tag 'application'
   %body
     .main
-      .flex.bg-blue-900
-        %div{ class: 'w-2/3 ml-auto mr-auto' }
-          .flex
-            %div{ class: 'w-1/2' }
-              %nav.inline
-                - if user_signed_in?
-                  = nav_link_to 'Library', library_path, class: 'nav-link', active_on: %r{/releases|/library}
-                  = nav_link_to 'Profile', profile_path, class: 'ml-8 nav-link', active_on: %r{/profile}
-                - else
-                  = link_to 'Sign in', new_user_session_path, class: 'nav-link'
-            %div.text-right{ class: 'w-1/2' }
-              - if user_signed_in?
-                .h-full.flex.flex-col.justify-center
-                  = render 'search/form'
-      .flash-banner
-        - flash.each do |key, text|
-          .py-3.text-gray-700.flash{ class: "flash-#{key}" }
-            .flex
-              .ml-auto.mr-auto{ class: 'w-2/3' }= text
+      = render 'layouts/navigation'
+
+      = render 'layouts/flashes'
+
       %div
         = yield
 
-    - if user_signed_in?
-      %footer.footer.bg-blue-100.py-8.mt-8
-        .flex
-          .ml-auto.mr-auto{ class: 'w-2/3' }
-            .text-center
-              = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'weak-link'
+    = render 'layouts/footer'

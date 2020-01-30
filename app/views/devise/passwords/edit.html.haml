@@ -1,12 +1,12 @@
-.flex.my-8
-  .ml-auto.mr-auto{ class: 'w-1/5' }
+.flex.mx-4.my-8
+  .w-full.ml-auto.mr-auto
     %h1.text-2xl Change your password
 
 .flex
-  .ml-auto.mr-auto{ class: 'w-1/5' }
+  .w-full.ml-auto.mr-auto
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-      .flex.bg-gray-100.border.border-gray-300
-        .w-full.m-4
+      .flex.bg-gray-100
+        .w-full.mx-4.my-8
           .flex.mb-4
             .w-full
               = f.label :password, "New password"
