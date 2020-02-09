@@ -90,7 +90,7 @@ class DiscogsRelease
   end
 
   def discogs_cover_thumb_url
-    model.images.first.uri150
+    model.images&.first&.uri150
   end
 
   def discogs_api_resource_url
