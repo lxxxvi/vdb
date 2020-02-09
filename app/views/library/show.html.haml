@@ -1,6 +1,12 @@
 .flex.mx-4.my-8
   .w-full.ml-auto.mr-auto
-    = link_to 'Add release', new_release_path, class: 'green-button float-right'
+    .flex
+      .w-full= render 'search/form'
+    .flex.mt-4
+      .w-full= link_to 'Add release', new_release_path, class: 'inline-block button green-button w-full text-center'
+
+.flex.mx-4
+  .w-full
     %h1 Library
 
 .flex.m-4

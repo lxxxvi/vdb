@@ -1,17 +1,17 @@
-- if @search.no_discogs_token?
+- if @discogs_search.no_discogs_token?
   .flex.py-4.bg-pink-100.text-pink-900
     .ml-auto.mr-auto{ class: 'w-2/3' }
       You need to
       = link_to 'configure your Discogs token', profile_path
       before you can use the search functionality.
 
-- elsif @search.invalid_token?
+- elsif @discogs_search.invalid_token?
   .flex.py-4.bg-pink-100.text-pink-900
     .ml-auto.mr-auto{ class: 'w-2/3' }
       There seems to be a problem with your Discogs token. Please head over to
       = link_to 'your profile page', profile_path
       and check your configured token.
-- elsif @search.empty_query?
+- elsif @discogs_search.empty_query?
   .flex.py-4.bg-pink-100.text-pink-900
     .ml-auto.mr-auto{ class: 'w-2/3' }
       .text-gray-500
@@ -19,12 +19,16 @@
         %i nothing,
         please try again.
 
-- elsif @search.empty_result?
+- elsif @discogs_search.empty_result?
   .flex.py-4.bg-pink-100.text-pink-900
     .ml-auto.mr-auto{ class: 'w-2/3' }
       .text-gray-500
         No result for query
-        %i= "'#{@search.catno}'"
+        %i= "'#{@discogs_search.catno}'"
 
-- else
-  = render 'search_results', search: @search
+.flex.m-4
+  .w-full
+    = render 'search/form'
+
+- if @discogs_search.results.any?
+  = render 'discogs_search_results', discogs_search: @discogs_search

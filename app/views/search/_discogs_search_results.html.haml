@@ -4,7 +4,7 @@
 
 .flex.mt-10
   .w-full
-    - search.results.each do |item|
+    - discogs_search.results.each do |item|
       .flex.border-b.px-4
         .w-full
           .flex
@@ -48,6 +48,6 @@
                 .w-full
                   = form_with(model: Release.new(discogs_release_id: item.id)) do |f|
                     = f.hidden_field :discogs_release_id
-                    = f.submit 'Add to library', class: 'green-button'
+                    = f.submit 'Add to library', class: 'button green-button'
 
 
